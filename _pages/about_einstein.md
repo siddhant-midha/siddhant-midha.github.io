@@ -1,5 +1,13 @@
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I list below various collaborators that I've worked with and/or learned from over the years. (indeed, the over the years part will make more sense as I get old, yes).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+- ```2021``` Prof. Alok Shukla, Department of Physics, IIT Bombay
+- ```2021-22``` Prof. Vikram Rentala, Department of Physics, IIT Bombay
+- ```2022-``` Prof. Vikas Garg, Department of Computer Science, Aalto University
+- ```2022-23```Prof. Himadri Shekhar Dhar, Department of Physics, IIT Bombay
+- ```2022-``` Prof. Bhaskaran Muralidharan, Department of Electrical Engineering, IIT Bombay
+- ```2022-``` Prof. Kasturi Saha, Department of Electrical Engineering, IIT Bombay
+- ```2023-``` Prof. Sai Vinjanampathy, Department of Physics, IIT Bombay
+- ```2023``` Prof. Andreas Reiserer, Department of Physics, Technical University of Munich
+- ```2023-``` Dr. Jean-Phillipe Tetienne and Dr. David Broadway, RMIT University
+- ```2023-```Prof. Pertti Hakonen and Dr. Alexander Zyusin, Department of Applied Physics, Aalto University
+- ```2023-``` Prof. Jonathan Baugh, Department of Chemistry, University of Waterloo (Institute for Quantum Computing)
