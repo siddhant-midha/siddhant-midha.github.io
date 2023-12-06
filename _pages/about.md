@@ -7,9 +7,9 @@ subtitle: my homepage
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   more_info: >
-    <p>picture: tallinn, estonia</p>
+    <p>at tallinn, estonia</p>
 
 news: true  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
@@ -23,7 +23,7 @@ Hello! I am currently a fourth-year undergraduate student at the Department of E
 I am interested in all things quantum. My research interests lie in and around the following
 
 - Quantum Information
-- Condensed Matter Physics
+- Condensed Matter
 - Quantum Optics
 
 Particularly, I find myself fascinated by problems at the intersection of two or more of these fields. I also quite like quantum machine learning, and topics revolving around that. I enjoy thinking about problems in quantum dynamics which hold information/coding theortic aspects as well.
@@ -34,3 +34,5 @@ Outside of academia and research, I like listening to music -- my taste is, like
 
 If you're looking for my CV, go [here](https://siddhant-midha.github.io/assets/pdf/cv.pdf). Stuff I've taught is [here](https://siddhant-midha.github.io/teaching/), and some projects [here](https://siddhant-midha.github.io/projects/). 
 
+
+<a href="https://info.flagcounter.com/UvsF"><img src="https://s11.flagcounter.com/count2/UvsF/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
