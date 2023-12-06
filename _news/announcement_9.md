@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Accepted into the Condensed Matter meets Quantum Information conference at ICTS. See ya in BLR!
+Our work on FUNC-QAOA is now on the arXiv!
