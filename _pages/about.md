@@ -17,7 +17,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-_This website is under construction: if some links do not work, they should soon. For any other comments. please [email me](mailto:siddhantm.iitb@gmail.com).
+_This website is under construction: if some links do not work, they should soon. For any other comments. please [email me](mailto:siddhantm.iitb@gmail.com)._
 
 
 Hello! I am currently a fourth-year undergraduate student at the Department of Electrical Engineering at the Indian Institute of Technology Bombay, India. You can find me in Room 7109, Hostel 17, or in the Electrical and/or Physics departments most often. I am also frequently found sipping coffee at Cafe 92 or CCD.
