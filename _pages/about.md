@@ -36,8 +36,7 @@ Outside of academia and research, I like listening to music -- my taste is, like
 
 
 
-If you're looking for my CV, go [here](https://siddhant-midha.github.io/cv/). Stuff I've taught is [here](https://siddhant-midha.github.io/teaching/), and some projects [here](https://siddhant-midha.github.io/projects/). 
+If you're looking for my CV, go [here](https://siddhant-midha.github.io/cv/). Stuff I have taught is [here](https://siddhant-midha.github.io/teaching/), and some projects [here](https://siddhant-midha.github.io/projects/). 
 
-## Visitors
 
 <a href="https://info.flagcounter.com/UvsF"><img src="https://s11.flagcounter.com/count2/UvsF/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
