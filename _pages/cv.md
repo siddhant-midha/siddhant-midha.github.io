@@ -4,9 +4,8 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 4
-cv_pdf: gradCV_long_Siddhant_Midha.pdf
-description: 
+cv_pdf: gradCV__short_Siddhant_Midha.pdf
+description: For a pdf version of a brief vita, click on the PDF icon on the top-right.
 toc:
   sidebar: left
 ---
-Here is a brief vita. For a PDF, click [here](https://siddhant-midha.github.io/assets/pdf/gradCV__short_Siddhant_Midha.pdf). For a descriptive CV, please click on the ```PDF``` icon on the top-right of this page.
