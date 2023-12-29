@@ -21,9 +21,9 @@ Bender ([paper](https://arxiv.org/abs/quant-ph/0501052)) showed that hermiticity
 
 In parallel, there have been tremendous developments in the theory of topological insulators and topological superconductors. In this project, we survey what happens to the well established hermitian topological theory when hermiticity is relinquished. We observe surprising effects, and review recent developments.
 
-One can find the [review paper](https://siddhant-midha.github.io/assets/pdf/project_pdf/nh_topo/NH_Topology_paper.pdf) and [slides](https://siddhant-midha.github.io/assets/pdf/project_pdf/nh_topo/NH_Topology_slides.pdf). Further, the paper is rendered below.
+One can find the [review paper](https://siddhant-midha.github.io/assets/pdf/project_pdf/nh_top/NH_Topology_paper.pdf) and [slides](https://siddhant-midha.github.io/assets/pdf/project_pdf/nh_top/NH_Topology_slides.pdf). Further, the paper is rendered below.
 
 
 
 
-<embed src="/assets/pdf/project_pdf/nh_topo/NH_Topology_paper.pdf" type="application/pdf" width="750" height="1500">
+<embed src="/assets/pdf/project_pdf/nh_top/NH_Topology_paper.pdf" type="application/pdf" width="750" height="1500">
