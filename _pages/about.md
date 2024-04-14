@@ -17,8 +17,6 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-_This website is under construction: if some links do not work, they should soon. For any other comments. please [email me](mailto:siddhantm.iitb@gmail.com)._
-
 
 Hello! I am currently a fourth-year undergraduate student at the Department of Electrical Engineering at the Indian Institute of Technology Bombay, India. You can find me in Room 7109, Hostel 17, or in the Electrical and/or Physics departments most often. I am also frequently found sipping coffee at Cafe 92 or CCD.
 
@@ -36,7 +34,7 @@ Outside of academia and research, I like listening to music -- my taste is, like
 
 
 
-If you're looking for my CV, go [here](https://siddhant-midha.github.io/cv/). Stuff I have taught is [here](https://siddhant-midha.github.io/teaching/), and some projects [here](https://siddhant-midha.github.io/projects/). 
+If you're looking for my CV, find a pdf [here](https://siddhant-midha.github.io/cv/), and a more up-to-date overleaf [here](https://www.overleaf.com/read/fprrbwkfrbcj#7b5c64). Stuff I have taught is [here](https://siddhant-midha.github.io/teaching/), and some projects [here](https://siddhant-midha.github.io/projects/). 
 
 
 Find my schedule here: 
