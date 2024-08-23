@@ -33,8 +33,7 @@ Outside of academia and research, I like listening to music -- my taste is, like
 If you're looking for my CV, find a pdf [here](https://siddhant-midha.github.io/cv/), and a more up-to-date overleaf [here](https://www.overleaf.com/read/fprrbwkfrbcj#7b5c64). Stuff I have taught is [here](https://siddhant-midha.github.io/teaching/), and some projects [here](https://siddhant-midha.github.io/projects/). 
 
 
-Find my schedule here: 
-<iframe src="https://calendar.google.com/calendar/embed?src=siddhantm.iitb%40gmail.com&ctz=Asia%2FKolkata" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+My schedule can be found [here](https://calendar.google.com/calendar/u/0?cid=c2lkZGhhbnRtLmlpdGJAZ21haWwuY29t&cid=c203NDU2QHByaW5jZXRvbi5lZHU).
 
 
 <a href="https://info.flagcounter.com/UvsF"><img src="https://s11.flagcounter.com/count2/UvsF/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
