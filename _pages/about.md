@@ -18,16 +18,12 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 
-Hello! I am currently a fourth-year undergraduate student at the Department of Electrical Engineering at the Indian Institute of Technology Bombay, India. You can find me in Room 7109, Hostel 17, or in the Electrical and/or Physics departments most often. I am also frequently found sipping coffee at Cafe 92 or CCD.
+Hello! I am currently a first-year graduate student in the [Quantum Sciences and Engineering](https://quantum.princeton.edu/) department at Princeton University. Previously, I studied electrical engineering, physics, and just a bit of CS at IIT Bombay, in India. You can find me at Friend Center (FC309), or frequently juggling between EQuad and Jadwin.
 
 
-I am interested in all things quantum. My research interests lie in and around the following
+I am interested in many-body quantum information, and quantum technology in general.
 
-- Quantum Information
-- Condensed Matter
-- Quantum Optics
-
-Particularly, I find myself fascinated by problems at the intersection of two or more of these fields. I also quite like quantum machine learning, and topics revolving around that. I enjoy thinking about problems in quantum dynamics which hold information/coding theortic aspects as well. This has led to a natural inclination towards many-body physics and quantum error correction.
+I find myself fascinated by problems at the interface of quantum info, condensed matter, and quantum optics. I also like thinking about machine learning, and am trying to develop a 'physical' perspective for it.
 
 
 Outside of academia and research, I like listening to music -- my taste is, like my work, interdisciplinary :P; from thrash metal (say, Iron Maiden) to some jazz and baritones (say, Louis Armstrong), I listen throughout the spectrum. I also play guitar, and am not a very terrible singer (I think). I love reading books!
