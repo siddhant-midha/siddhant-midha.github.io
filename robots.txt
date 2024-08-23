@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://siddhant-midha.github.io/sitemap.xml
+Sitemap: https://siddhantmidha.com/sitemap.xml
