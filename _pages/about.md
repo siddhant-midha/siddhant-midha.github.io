@@ -26,11 +26,11 @@ I am interested in many-body quantum information, and quantum technology in gene
 I find myself fascinated by problems at the interface of quantum info, condensed matter, and quantum optics. I also like thinking about machine learning, and am trying to develop a 'physical' perspective for it.
 
 
-Outside of academia and research, I like listening to music -- my taste is, like my work, interdisciplinary :P; from thrash metal (say, Iron Maiden) to some jazz and baritones (say, Louis Armstrong), I listen throughout the spectrum. I also play guitar, and am not a very terrible singer (I think). I love reading books!
+Outside of academia and research, I like listening to music -- throughout the spectrum; from thrash metal (say, Iron Maiden) to some jazz and baritones (say, Louis Armstrong). I also play the guitar, and am not a very terrible singer (I think). I love reading books!
 
 
 
-If you're looking for my CV, find a pdf [here](https://siddhant-midha.github.io/cv/), and a more up-to-date overleaf [here](https://www.overleaf.com/read/fprrbwkfrbcj#7b5c64). Stuff I have taught is [here](https://siddhant-midha.github.io/teaching/), and some projects [here](https://siddhant-midha.github.io/projects/). 
+If you're looking for my CV, find a pdf [here](https://siddhant-midha.github.io/cv/), and a more up-to-date overleaf [here](https://www.overleaf.com/read/fprrbwkfrbcj#7b5c64). Stuff I have taught is [here](https://siddhant-midha.github.io/teaching/), and some projects [here](https://siddhant-midha.github.io/projects/). You can leave a message at [this link](https://forms.gle/DXY4JRZS2BCZC4XP9).
 
 
 My schedule can be found [here](https://calendar.google.com/calendar/u/0?cid=c2lkZGhhbnRtLmlpdGJAZ21haWwuY29t&cid=c203NDU2QHByaW5jZXRvbi5lZHU).
