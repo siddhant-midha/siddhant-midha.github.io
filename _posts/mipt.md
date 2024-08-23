@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: MIPT reading
+title: mipt papers
 description: papers 
 tags: distill formatting
 giscus_comments: true
@@ -47,7 +47,7 @@ _styles: >
   }
 
 ---
-Merry Christmas! Here I compile papers on MIPT that I have been reading.
+compilation of results in the MIPT arena.
 
 ## Random quantum circuits
 

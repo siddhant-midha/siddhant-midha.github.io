@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: qic
+title: qec papers
 description: papers 
 tags: distill formatting
 giscus_comments: true
@@ -47,6 +47,6 @@ _styles: >
   }
 
 ---
-Important papers in QIC.
+Important papers in quantum error correction.
 
 - [Quantum data processing and error correction](https://arxiv.org/abs/quant-ph/9604022): _Perfect error correction is possible iff the coherent information equals initial entropy, i.e.,_ $I(R:E') = 0$. Terms like coherent information, entropy exchange, and entanglement fidelity are defined, and a data processing inequality on the coherent information is stated.
