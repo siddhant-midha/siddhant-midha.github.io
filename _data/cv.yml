@@ -3,17 +3,21 @@
   contents:
     - name: Full Name
       value: Siddhant Midha
-    - name: Date of Birth
-      value: 21st July 2002
     - name: Languages
       value: English, Hindi, (learning) German
 
 - title: Education
   type: time_table
   contents:
+    - title: Doctor of Philosophy
+      institution: Princeton University
+      year: 2024 - 
+      description:
+        - Quantum science and engineering
+  
     - title: Bachelors of Technology
       institution: Indian Institute of Technology Bombay
-      year: (expected) 2024
+      year: 2020 - 2024
       description:
         - Electrical Engineering,
         - With Honors.
