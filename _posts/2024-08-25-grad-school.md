@@ -1,7 +1,7 @@
 ---
 layout: distill
-title: mipt papers
-description: papers 
+title: Ph.D. applications
+description: a mini-guide  
 tags: distill formatting
 giscus_comments: true
 date: 2024-08-22
