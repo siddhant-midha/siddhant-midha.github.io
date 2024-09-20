@@ -18,7 +18,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 
-Hello! I am currently a first-year graduate student in the [Quantum Sciences and Engineering](https://quantum.princeton.edu/) department at Princeton University. Previously, I studied electrical engineering, physics, and just a bit of CS at IIT Bombay, in India. You can find me at Friend Center (FC309), or frequently juggling between EQuad and Jadwin.
+Hello! I am currently a first-year graduate student in [Princeton Quantum Initiative](https://quantum.princeton.edu/people/siddhant-midha) at Princeton University. Previously, I studied electrical engineering, physics, and just a bit of CS at IIT Bombay, in India. You can find me at Friend Center (FC309), or frequently juggling between EQuad and Jadwin.
 
 
 I am interested in many-body quantum information, and quantum technology in general.
