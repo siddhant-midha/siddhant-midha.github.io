@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Presenting the work on disorder in topological insulators at QUANTUMatter 2023 . See you in Madrid.
+Presenting the work on disorder in topological insulators at QUANTUMatter 2023 in Madrid.

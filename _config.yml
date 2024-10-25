@@ -6,14 +6,14 @@ title: Siddhant Midha #the website title (if blank, full name will be used inste
 first_name: Siddhant
 middle_name: 
 last_name: Midha
-email: siddhantm.iitb@gmail.com
+email: siddhantm@princeton.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   personal site
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: personal website, siddhant, midha  # add your own keywords or leave empty
+keywords: personal website, siddhant, midha, quantum  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -73,7 +73,7 @@ x_username: elfriedchicken # your X handle
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 linkedin_username: siddhant-midha-33878820a # your LinkedIn user name
 telegram_username: # your Telegram user name
-scholar_userid: https://scholar.google.com/citations?user=fqeb_dgAAAAJ&hl=en # your Google Scholar ID
+scholar_userid: fqeb_dgAAAAJ # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
 whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 orcid_id: # your ORCID ID

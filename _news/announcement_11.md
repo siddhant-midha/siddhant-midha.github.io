@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I will be joining [Princeton University](https://quantum.princeton.edu/) for my Ph.D. this fall. 
+I will be joining [Princeton University](https://quantum.princeton.edu/) for my Ph.D. this fall! 

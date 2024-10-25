@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Accepted into the Condensed Matter meets Quantum Information conference at ICTS. See ya in BLR!
+Attending the Condensed Matter meets Quantum Information conference at ICTS.

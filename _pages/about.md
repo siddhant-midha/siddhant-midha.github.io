@@ -18,20 +18,16 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 
-I am currently a first-year graduate student in the [Princeton Quantum Initiative](https://quantum.princeton.edu/people/siddhant-midha) at Princeton University. Previously, I studied electrical engineering, physics, and just a bit of CS at IIT Bombay, in India. You can find me at Friend Center (FC309), or frequently juggling between EQuad and Jadwin.
+I am currently a first-year graduate student at [Princeton Quantum Initiative](https://quantum.princeton.edu/people/siddhant-midha), Princeton University. Previously, I studied electrical engineering, physics, and just a bit of CS at IIT Bombay, in India. You can find me at Friend Center (FC309), or frequently juggling between EQuad and Jadwin.
 
 
 I am interested in studying the dynamics of quantum information, and quantum technology in general.
 
-I find myself fascinated by problems at the interface of quantum info, condensed matter, and quantum optics. I also like thinking about machine learning, and am trying to develop a 'physical' perspective for it.
+I find myself fascinated by problems at the interface of quantum info, condensed matter, and quantum optics. I also like thinking about machine learning, and complexity theory sometimes.
 
 
 
-[[Bio](https://siddhant-midha.github.io/cv/), [CV](https://www.overleaf.com/read/fprrbwkfrbcj#7b5c64), [Teaching](https://siddhant-midha.github.io/teaching/),[Schedule](https://calendar.google.com/calendar/u/0?cid=c203NDU2QHByaW5jZXRvbi5lZHU)]
-
-
-
-[Leave me a message!](https://forms.gle/DXY4JRZS2BCZC4XP9)
+[[bio](https://siddhant-midha.github.io/cv/), [cv](https://www.overleaf.com/read/fprrbwkfrbcj#7b5c64), [teaching](https://siddhant-midha.github.io/teaching/), [schedule](https://calendar.google.com/calendar/u/0?cid=c203NDU2QHByaW5jZXRvbi5lZHU)]
 
 
 

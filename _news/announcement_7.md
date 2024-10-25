@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Deutschland again! Heading over to Dresden for the Quantum Dynamics workshop at MPI-PKS.
+Heading over to Dresden for the Quantum Dynamics workshop at MPI-PKS.

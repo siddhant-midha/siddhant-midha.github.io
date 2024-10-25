@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-We put up the paper on [optimized NV magnetometry](https://arxiv.org/abs/2402.17781) on arXiv!
+[Optimized NV magnetometry](https://arxiv.org/abs/2402.17781) published in [Phys Rev Applied](https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.22.014015).
