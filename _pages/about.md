@@ -7,9 +7,9 @@ subtitle: my homepage
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   more_info: >
-    <p>me, illustrated</p>
+    <p>Siddhant (Sid)</p>
 
 news: true  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
@@ -18,7 +18,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 
-I am currently a first-year graduate student at [Princeton Quantum Initiative](https://quantum.princeton.edu/people/siddhant-midha), Princeton University. Previously, I studied electrical engineering, physics, and just a bit of CS at IIT Bombay, in India. You can find me at Friend Center (FC309), or frequently juggling between EQuad and Jadwin.
+I am currently a first-year graduate student at [Princeton Quantum Initiative](https://quantum.princeton.edu/people/siddhant-midha), Princeton University. Previously, I studied electrical engineering, physics, and just a bit of CS at IIT Bombay, India. You can find me at Friend Center (FC309), or frequently juggling between EQuad and Jadwin.
 
 
 I am interested in studying the dynamics of quantum information, and quantum technology in general.
