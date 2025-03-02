@@ -1,0 +1,59 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{inequalities in and around quantum info}
+\author{siddhant midha}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Your abstract.
+\end{abstract}
+
+\section{Definitions}
+\begin{itemize}
+    \item Trace norm $||O||_1 = \text{Tr}[\sqrt{O^{\dagger}O}]$
+    \item Operator norm $||O|| = \sup\{\sqrt{\langle\psi|O^{\dagger}O|\psi\rangle} \mid \langle\psi|\psi\rangle = 1\}$
+    \item The Schatten $p$-norm $||O||_p := [\text{Tr}((O^{\dagger}O)^{p/2})]^{1/p}$. $p=1$ corresponds to the trace norm and $p=\infty$ is the operator norm.
+\end{itemize}
+
+\begin{enumerate}
+    \item \textit{Entropy} $S(\rho) := -\text{Tr}(\rho\log{\rho})$
+    \item \textit{Relative Entropy} $S(\rho||\sigma) := \text{Tr}[\rho(\log{\rho} - \log{\sigma})]$
+    \item \textit{Mutual Information} $I(A,B) := S(\rho_{AB}||\rho_A \otimes \rho_B)$
+\end{enumerate}
+\section{Matrix inequalities}
+\begin{itemize}
+    \item $||X||_1||Y||_1 \geq \text{Tr}[XY]$
+\end{itemize}
+
+
+\section{Distance between states}
+\begin{itemize}
+    \item $S(\rho||\sigma) \geq ||\rho-\sigma||_1^2/2$
+\end{itemize}
+
+\section{General Statements}
+\begin{enumerate}
+    \item \textbf{Mutual information upper bounds correlations}. If I define a correlation function as
+    \[C(M_A,M_B) := \langle M_A\otimes M_B\rangle_{\rho_{AB}} - \langle M_A\rangle_{\rho_A}\langle M_B \rangle_{\rho_B}\]
+    then, it follows that 
+    \[I(A:B) \geq \frac{C(M_A,M_B)^2}{2 ||M_A||_1^2 ||M_B||_1^2}\]
+
+\end{enumerate}
+
+\end{document}

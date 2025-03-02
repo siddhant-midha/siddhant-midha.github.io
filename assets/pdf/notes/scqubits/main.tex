@@ -1,0 +1,129 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{superconducting qubits}
+\author{siddhant midha}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Your abstract.
+\end{abstract}
+
+\section{Introduction}
+DiVincenzo criteria:
+\begin{itemize}
+    \item \textit{scalability}. current flows in superconducting loops on an integrated circuit
+    \item \textit{initialization}. cooling at cryogenic temperatures ($\sim 10$mK)
+    \item \textit{coherence}. superconducting ground state!
+    \item \textit{gates}. single qubit: microwave photons. two qubit: circuit QED.
+    \item \textit{measurement}. EM fields.
+\end{itemize}
+
+\section{Superconductivity}
+The BCS form of superconductivity manifests as a macroscopic degenerate ground state formed by \textit{pairs} of electrons. A pair looks like this:
+\begin{equation}
+    \sim \ket{k,\uparrow} + \ket{-k,\downarrow}
+\end{equation}
+These pairs, known as \textit{Cooper pairs} are bosonic excitations which result in a macroscopic occupation of the ground state. This is nothing but Bose-Einstein condensation. The ground state is described by the BCS order parameter
+\begin{equation}
+    \Psi = |\Psi|e^{\iota\theta}
+\end{equation}
+with $|\Psi|^2 = n_s$ denoting the density of the pairs.
+\section{Quantum Oscillators}
+Consider an oscillator described by the following differential equation
+\begin{equation}
+    \Ddot{Q} + \frac{1}{LC}Q = 0
+\end{equation}
+This dynamics is generated from the following Lagrangian
+\begin{equation}
+    L = \frac{1}{2}L\dot{Q}^2 - \frac{Q^2}{2C}
+\end{equation}
+as can be seen by a direct application of the Euler-Lagrange equations
+\begin{equation}
+    \frac{d}{dt}\frac{dL}{d\dot{Q}} = \frac{dL}{dQ}.
+\end{equation}
+The natural frequency of this oscillator is $\omega = 1/\sqrt{LC}$. The `momentum' variable here is 
+\begin{equation}
+    \Phi = \frac{dL}{d\dot{Q}} = L\dot{Q} 
+\end{equation}
+which is nothing but the magnetic flux through the inductor. These canonical variables upon quantizing satisfy
+\begin{equation}
+    [\hat{Q},\hat{\Phi}] = \iota\hbar 
+\end{equation}
+and the Hamiltonian can be written as
+\begin{equation}
+    \hat{H} = \frac{\hat{\Phi}^2}{2L} + \frac{\hat{Q}^2}{2C}.
+\end{equation}
+The ladder operators for this oscillator can be defined as
+\begin{align}
+    \hat{a} &= \frac{1}{\sqrt{2C\hbar\omega}}\hat{Q}  + \iota\frac{1}{\sqrt{2L\hbar\omega}}\hat{\Phi} \\
+    \hat{a}^{\dagger} &= \frac{1}{\sqrt{2C\hbar\omega}}\hat{Q}  - \iota\frac{1}{\sqrt{2L\hbar\omega}}\hat{\Phi}
+\end{align}
+which satisfy $[\hat{a},\hat{a}^{\dagger}]=1$ as usual. What is the Hilbert space? Working in the number/charge basis, we have a set of eigenstates $\ket{n}$ for $n \geq 0$ which are eigenvalues of the number operator $\hat{N}\ket{n}=n\ket{n}$ and also of the charge operator as $\hat{Q} \propto \hat{N}$ where the constant of proportionality does not matter for now. Then, we can write the Fourier transform of basis states as
+\begin{equation}
+    \ket{n} = \int e^{-\iota n\phi} \ket{\phi} d\phi
+\end{equation}
+where $\ket{\phi}$ is the flux basis.
+\section{Josephson junctions}
+\begin{equation}
+    \Delta V = \frac{\hbar}{2e}\frac{d(\Delta \phi)}{dt}
+\end{equation}
+\begin{equation}
+    I = I_c\sin{\Delta \phi}
+\end{equation}
+\section{Quantum Circuits}
+Energy in the oscillator,
+\begin{equation}
+    U = \int_{-\infty}^t I(t')V(t')dt' = \int_{-\infty}^t I_c\sin\phi \frac{\hbar}{2e}\dot{\phi}dt = \frac{I_c \hbar}{2e}\int_{\phi(-\infty)}^{\theta(t)}\sin\theta d\theta = -\frac{I_ce}{2\hbar} \cos\theta + c
+\end{equation}
+\begin{equation}
+    H = \frac{Q^2}{2C} - E_J\cos\phi 
+\end{equation}
+with $E_J = eI_c/(2\hbar)$. Expanding the cosine $\cos\phi \approx 1-\phi^2/2$ and ignoring the constant offset,
+\begin{equation}
+    H = \frac{1}{2}CV^2 + \frac{1}{2}LI^2 = \frac{Q^2}{2C} + \frac{\Phi^2}{2L}
+\end{equation}
+with $\omega = 1/\sqrt{LC}$, $\phi = -2e\Phi/\hbar$ and $V = -LdI/dt = Q/C$.
+
+
+Since now we are dealing with Cooper pairs, we have that $\hat{Q} = 2e\hat{N}$. Thus, $\hat{Q}^2/2C = (2e^2/C)\hat{N}^2 \equiv E_C\hat{N}^2$ where we define $E_C=2e^2/C$. This results in
+\begin{equation}
+    \boxed{H = E_C\hat{N}^2 - E_J\cos\hat{\Phi}}
+\end{equation}
+Expanding this out,
+\begin{equation}
+    H = \sum_N E_CN^2\ket{N}\bra{N} -\frac{E_J}{2}(\ket{N}\bra{N+1} + h.c.)
+\end{equation}
+
+
+
+The anharmonicity of this oscillator scales as $\sqrt{E_C/E_J}$.
+
+Let's quantize this oscillator.
+
+\section{trivia}
+\begin{enumerate}
+\item $k_BT=\hbar\omega$
+\item $5$GHz $\to$ $T = 250$mK.
+\item Cooper pair box $T_2^*\sim 100$ns
+\item the effective dipole moment, which enters in the transition matrix elements while driving between two states, can be made much larger in superconducting qubits than atoms
+\end{enumerate}
+
+\bibliography{sample}
+
+\end{document}
