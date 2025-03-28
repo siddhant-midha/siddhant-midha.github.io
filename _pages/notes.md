@@ -3,7 +3,7 @@ layout: page
 title: notes
 permalink: /notes/
 description: notes 
-nav: 
+nav: true
 nav_order: 1
 display_categories:  
 horizontal: false
