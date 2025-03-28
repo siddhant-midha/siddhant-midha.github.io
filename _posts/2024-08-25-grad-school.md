@@ -48,6 +48,8 @@ _styles: >
 
 ---
 
+[this is still incomplete, hopefully i will get to it soon.]
+
 ## Disclaimer
 All of the content below is a result of my experience with grad school applications, and is by no means a complete or correct set of rules one needs to follow. These are just guidelines which hopefully will be helpful in crafting your own Ph.D. journey. And with that said, while most of what I say is catered to  _Ph.D. applications in the U.S.A._, some things might be generalized to M.S. applications, and Ph.D. applications elsewhere.
 
