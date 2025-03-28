@@ -1,0 +1,23 @@
+\subsection{Introduction}
+In this section, we shall deal with the very basic notions of classical information. The setup is as follows. We have a \textit{information source}, which is some entity that emits some sort of information. Vague? We can model this information source as a random variable which can take values in some set of symbols. 
+\begin{definition}[Information Source]\footnote{This definition is coined by yours truly.}
+Formally, an information source is a triple $(X,\Sigma,p_X)$ where $X$ is a random variable which can take values $X=a$ for $a\in\Sigma$ with probability $p_X(a)$.
+\end{definition}\noindent
+This definition is equivalent to a probabilistic classical register as defined in \ref{subsec:registers}. Readers are suggested to go through the same.\\\noindent 
+Now we ask the question - how does one measure information? One can think of measuring information in terms of measuring the amount of surprise that the information source can provide. Let $X_1$ and $X_2$ be two sources\footnote{an abuse of notation, which unfortunately will be repeated} with $\Sigma = \{0,1\}$ for both and let $p_{X_1} \equiv (0.5,0.5)$ and $p_{X_2} \equiv (1,0)$ be their probability vectors. Which source encodes more surprise? Yes, the first one. Why?
+\begin{definition}[Information content]
+Given the source $(X,\Sigma,p_X)$, define a map $i:\Sigma \to \R$ as 
+\[\]
+\begin{align*}
+    i(a) &= \log{\frac{1}{p_X(a)}} \text{ if } p_X(a) \neq 0\\ 
+    &= 0 \text{ otherwise}
+\end{align*}
+The quantity $i(a)$ is said to be the information content in the symbol $a$ (associated with this source).
+\end{definition}
+\noindent If we see a source emitting a symbol which had less probability of being emitted, we'd be surprised! \\\noindent 
+Now, what is the surprise associated with the source $X$? We would define it as $i(X)$!\footnote{there is no weirdness here, this is a transformation of random variables}. Which is again a random variable. Now we make a very important definition. 
+\begin{definition}[Shannon Entropy]
+The shannon entropy associated with the source $X$ is defined as 
+\[H(X) = \E[i(X)] =- \sum_{a\in\Sigma}p_X(a)\log{p_X(a)}\]
+\end{definition}
+\newpage 

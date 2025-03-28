@@ -1,0 +1,36 @@
+\subsection{Encodings}
+Consider a source $X$ with $\Sigma = \{a,b,c,d\}$ and $p_X\equiv (1/2,1/8/1/4,1/8)$. We are tasked with coming up with an encoding scheme which uses the least number of average bits. \footnote{Shall not elaborate on why we need to do this.} One is the straightforward way
+\[a\to00,b\to01,c\to10,d\to11\]
+Another way\footnote{While transmission, a \textit{bitstream} is sent, so keep in mind that it should be uniquely decodable.} is
+\[a\to0,b\to110,c\to10,d\to111\]
+These binary strings are called \textit{codewords}. Check that the average number of bits needed for the second case is lesser than of the first case! \\\noindent 
+Can we always associate some codewords to all the symbols efficiently? Shannon suggested the idea of \textit{block encoding}.
+\\\noindent Informally, a block encoding involves letting the source emit a large number of symbols $x^n = x_1,x_2\dots x_n$ for $n >{}> |\Sigma|$ in a memory-less fashion. More formally, we have a set of independent and identically distributed random variables $(X_1,X_2\dots X_n)$. Thus,
+\[p_{X^n}(x^n) = \Pi_{i=1}^np_X(x_i)\]
+If we denote $N(a|x^)$ as the number of times $a\in\Sigma$ occurred in $x^n$, then we have
+\[p_{X^n}(x^n) = \Pi_{i=1}^np_X(x_i) = \Pi_{a\in\Sigma}p_X(a)^{N(a|x^n)}\]
+\begin{definition}[Sample Entropy]
+Given a sample $x^n = (x_1,\dots,x_n) \in \Sigma^n$, define the sample entropy as 
+\[-\frac{1}{n}\log{p_{X^n}(x^n)}\]
+\end{definition}
+Now again, we define another random variable to be the sample entropy of the random vector $X^n$ as
+\[-\frac{1}{n}\log{p_{X^n}(X^n)}\]
+Further,
+\begin{align*}
+    -\frac{1}{n}\log{p_{X^n}(X^n)} &= -\frac{
+    1}{n}\log{\Pi_{a\in\Sigma}p_X(a)^{N(a|X^n)}} \\ 
+    &= -\sum_{a\in\Sigma}\frac{N(a|X^n)}{n}\log{p_X(a)}
+\end{align*}
+As $n$ becomes large, this random variable converges to $H(X)$. Thus, it is highly likely that the source emits a sequence with sample entropy close to the true entropy. This motivates us to define the following.
+\begin{definition}[Typical Sequences]
+A sequences $x^n \in \Sigma^n$ is called a \textit{typical sequence} if its sample entropy is `close' to the true entropy. The set of all such sequences is called the typical set.
+\end{definition}
+\noindent Then, we have the following property.
+\begin{lemma}[Asymptotic Equipartition Property]
+\begin{enumerate}
+    \item The probability that an emitted sequence is typical becomes large as $n$ increases.
+    \item The size of the typical set is $\approx 2^{nH(X)}$.
+    \item The probability of a particular typical sequence is roughly uniform, $\approx 2^{-nH(X)}$.
+\end{enumerate}
+\end{lemma}
+\newpage 

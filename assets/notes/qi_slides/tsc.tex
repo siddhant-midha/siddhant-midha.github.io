@@ -1,0 +1,423 @@
+% \documentclass{beamer}
+\documentclass[handout]{beamer} 
+\usepackage{graphicx}
+\usepackage{hyperref}
+% \usetheme{Hannover}
+\setbeamertemplate{footline}{}
+\newcommand{\updateinfo}[1][\today]{\par\vfill\hfill{\scriptsize\color{black}Last updated on \color{red} #1 \color{black}}}
+% \usetheme{Madrid}
+\title{PH 534: Quantum Information and Computing TSC}
+\author[Siddhant Midha]{\texorpdfstring{Siddhant Midha\\\color{red}\url{https://siddhantmidha.com/}\color{black}}{Siddhant Midha}}
+\date{\today}
+\usepackage{physics}
+\usepackage{dsfont}
+\usepackage{mathtools}
+\usepackage{comment}
+\renewcommand{\vec}{\text{vec}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\iden}{\mathds{1}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Exp}{\mathbb{E}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\J}{\mathcal{J}}
+\newcommand{\w}{\wedge}
+\usepackage{tikz}
+
+
+% \frame{\titlepage} 
+%=================
+\AtBeginSection[]
+{\begin{frame} 
+\frametitle{Table of Contents}
+ \tableofcontents  
+\end{frame}}
+% %==================
+\begin{document}
+\frame{\titlepage} 
+\begin{frame}{The postulates}
+\begin{itemize}
+\item Associated to any isolated physical system is a complex vector space equipped with an inner product, known as the \textit{state space} of the system. The state of the system is completely described by its \textit{state vector}, which is a normalized vector in the state space.\pause
+\item The evolution of a \textbf{closed} quantum system is described by a unitary transformation.\pause That is,
+\[|\psi(t_1)\rangle = U(t_1,t_2)|\psi(t_2)\rangle\]\pause
+\end{itemize}
+
+The evolution postulate can also be written as the Schrodinger equation $i\hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat H \Psi(\mathbf{r},t)$. \pause This can be transformed back using $U(t_1,t_2)= exp(\frac{-iH(t_1-t_2)}{\hbar})$.
+\color{red} The above expression assumes a time independent hamiltonian\color{black}
+\end{frame}
+
+\begin{frame}{The postulates -- Quantum Measurements}
+\begin{itemize}
+\item Quantum measurements are described by a set of measurement operators $M_m$ which act on the state space of the system under consideration. \pause The index $m$ refers to the measurement outcome. \pause The probability of measuring the outcome $m$ given the current state is $\ket{\psi}$ is\pause
+\[p(m) = \langle\psi|M_m^*M_m|\psi\rangle\]\pause
+and after measuring $m$ the state collapses to \pause
+\[\frac{M_m\ket{\psi}}{\sqrt{\langle\psi|M_m^*M_m|\psi\rangle}}\]\pause
+The measurement operators satisfy the completeness relation\pause
+\[\sum_{m}M_m^*M_m = I\]\pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The postulates -- Composite Systems}
+\begin{itemize}
+\item The state space of the composite system is mathematically described by the tensor product operation. \pause If we have systems $1$, $2$, $3$ ... with hilbert spaces $\Hilb_1$, $\Hilb_2$, $\Hilb_3$ ... and states $\ket{\psi_1},\ket{\psi_2},\dots\ket{\psi_n}$, then \pause
+\[\Hilb_{1,2,\dots n} = \Hilb_1\otimes\Hilb_2\otimes \dots \Hilb_n\]\pause
+With the state of the composite system\pause
+\[\ket{\psi} = \ket{\psi_1}\otimes\ket{\psi_2}\otimes \dots \ket{\psi_n} \in \Hilb_1\otimes\Hilb_2\otimes \dots \Hilb_n\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Notations}
+    \begin{itemize}
+        \item States: $\ket{\psi}$
+        \item $\ket{\psi^{\pm}} = \frac{1}{\sqrt{2}}(\ket{01}\pm\ket{10})$, $\ket{\phi^{\pm}} = \frac{1}{\sqrt{2}}(\ket{00}\pm\ket{11})$, $\ket{\pm} = \frac{1}{\sqrt{2}}(\ket{0}\pm\ket{1})$
+        \item Density operators: $\rho,\sigma...$
+        \item Hilbert Space: $\Hilb$
+        \item Set of linear operators from $\Hilb_1$ to $\Hilb_2$: $L(\Hilb_1,\Hilb_2)$
+        \item Set of density matrices on $\Hilb$: $D(\Hilb) \subset L(\Hilb)$
+        \item Set of linear operators from $L(\Hilb_1)$ to $L(\Hilb_2)$: $T(\Hilb_1,\Hilb_2)$
+        \item Set of quantum channels from $L(\Hilb_1)$ to $L(\Hilb_2)$: $C(\Hilb_1,\Hilb_2) \subset T(\Hilb_1,\Hilb_2)$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Density Operators}
+\begin{itemize}
+\item If a system exists in the states $\ket{\psi_i}$ with probabilities $p_i$, \pause then its density operator $\rho$ is defined as\pause
+\[\rho = \sum_ip_i\ket{\psi_i}\bra{\psi_i}\]\pause
+\item The density operator is positive and has unit trace. \pause The converse holds.
+\item Unitary evolution\pause
+\[\rho = \sum_ip_i\ket{\psi_i}\bra{\psi_i} \to \sum_ip_iU\ket{\psi_i}\bra{\psi_i}U^* = U\rho U^*\]\pause
+\item Measurements \pause
+\[p(m) = Tr(M_m^*M_m\rho)\]\pause
+\[\rho_m = \frac{M_m\rho M_m^*}{Tr(M_m^*M_m\rho)}\]\pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Analyzing subsystems}
+If we have systems $A$ and $B$, described by the density operator $\rho_{AB}\in D(\Hilb_A\otimes \Hilb_B)$, we define the density operator for the subsystem $A$ as\pause
+\[\rho_A \equiv Tr_B(\rho_{AB}) \in D(\Hilb_A)\]\pause
+with the partial trace operation $Tr_B$ being defined as\pause
+\[Tr_B(\ket{a_1}\bra{a_2}\otimes \ket{b_1}\bra{b_2}) \equiv \ket{a_1}\bra{a_2}tr(\ket{b_1}\bra{b_2}) )\]\pause
+and for general states $\rho_{AB}$ the definition extends by superposition. \pause Or,
+\[Tr_B(\rho_{AB}) := \sum_j(I_A\otimes \bra{j}_B)\rho_{AB}(I_A\otimes \ket{j}_B)\]
+\end{frame}
+
+\begin{frame}{Schmidt Decomposition}
+\begin{block}{Theorem 2.7 of QCQI}
+Let $\ket{\psi}\in\Hilb_{AB}$. \pause Then there exist orthonormal states $\ket{i_A} \in \Hilb_A$ and orthonormal states $\ket{i_B}\in\Hilb_B$ such that \pause
+\[\ket{\psi} = \sum_i\lambda_i\ket{i_A}\otimes\ket{i_B}\] \pause
+where $\lambda_i \geq 0$ and $\sum_i\lambda_i^2 = 1$.
+\end{block}
+\textbf{Question} Consider the state, $\ket{\psi} = \frac{1}{\sqrt{3}}(\ket{00} + \ket{01} + \ket{10})$. Find its Schmidt Decomposition. How do you do this? SVD?
+\end{frame}
+
+\begin{frame}{Purification}
+\begin{itemize}
+\item Suppose
+\[\rho_A = \sum_ip_i\ket{i_A}\bra{i_A}\]
+\item Introduce $R$ with $\Hilb_R = \Hilb_A$ (\textcolor{red}{can we do better}?) and a orthonormal basis $\ket{i_R}$. \pause
+\item Define
+\[\ket{\psi_{AR}} \equiv \sum_i\sqrt{p_i}\ket{i_A}\ket{i_R}\]\pause
+\item See that 
+\[\rho_A = Tr_R(\ket{\psi_{AR}}\bra{\psi_{AR}})\]\pause
+\end{itemize}\vspace{-6mm}
+\textbf{Question}     Compute the purification for the state 
+\[\rho = \frac{1}{2}(\ket{0}\bra{0} + \ket{+}\bra{+})\]
+\end{frame}
+
+\begin{frame}{Projective Measurements}
+Given a hermitian observable $M$, let its spectral decomposition be\pause
+\[M = \sum_mmP_m\]\pause
+where $P_m$ is the projector onto the eigenspace with eigenvalue $m$. \pause Upon measuring this observible with the state $\ket{\psi}$, the state collapses into a projection onto one of the eigenspaces, with probability \pause
+\[p(m) = \langle\psi|P_m|\psi\rangle\]\pause
+with the collapsed state being\pause
+\[\ket{\psi|m} = \frac{P_m\ket{\psi}}{\sqrt{p(m)}}\]\pause
+It is easy to see that\pause
+\[\Exp[M] = \langle\psi|M|\psi\rangle\]\pause
+The notion of `measuring in a basis' $\ket{i}$ can be viewed as a projective measurement with $P_i = \ket{i}\bra{i}$.
+\end{frame}
+
+\begin{frame}{Differences between General Measurements and Projective Measurements}
+\begin{itemize}
+\item Both general measurements and projective measurements satisfy the completeness relation i.e. $\sum_m M_m^*M_m = I$. \pause
+\item In addition to general measurements, projective measurements also satisfy the additional constraints-\pause
+    \begin{enumerate}
+        \item $P_m$ are hermitian.\pause
+        \item $P_m P_{m'}$ = $\delta(m, m'$) $M_m$\pause
+    \end{enumerate}
+These two conditions just mean that $P_m$ are orthogonal projectors.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Projective Measurement $
+\to$ General Measurements!}
+%%%%add PAUSES TOO
+\begin{itemize}
+    \item The projective measurements rule together with the postulate on unitary time evolution is sufficient to derive the postulate on general measurements using the composite systems postulate.\pause 
+    \item Suppose we have a quantum system with state space $Q$ with measurement operators $M_m$. Now we introduce an \textit{ancilla system} with the state space $M$ with an orthonormal basis $\ket{m}$.\pause 
+    \item Let $\ket{0}$ be a fixed state in M. Define operator $U$ on the products $\ket{\psi}\ket{0}$ with $\ket{\psi}$ from state space $Q$ and $\ket{0}$ as the fixed state in M as \[ U\ket{\psi}\ket{0} = \sum_m M_m \ket{\psi}\ket{m} \]\pause 
+    \item $\bra{\phi}\bra{0}U^* U \ket{\psi}\ket{0} = \sum_{m,m'} \bra{\phi} M_m^* M_{m'} \ket{\psi} \bra{m}\ket{m'} = \sum\limits_m \bra{\phi} M_m^* M_m \ket{\psi}
+$ (Using orthonormality of $m$) $= \bra{\phi}\ket{\psi}$ (Using completeness of $M_m$)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Projective Measurement $
+\to$ General Measurements!}
+%%%%add PAUSES TOO
+\begin{itemize}
+    \item We saw above that the operator $U$ preserves inner products between states of the form $\ket{\psi}\ket{0}$. As $\ket{0}$ was an arbitrary state in M, we can extend the definition of $U$ to a unitary operator on space $Q \otimes M$ generalised from $Q \otimes \ket{0}$.\pause 
+    \item We now perform projective measurements on the two systems describes by projectors $P_m= I_Q \otimes \ket{m} \bra{m}$.\pause 
+    \item This set of projective measurements give us the probability and the final state of the system in accordance to the measurement postulate.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Projective Measurement $
+\to$ General Measurements!}
+    \begin{itemize}
+        \item The probabilities are calculated as follows \[p(m)= \bra{\phi}\bra{0}U^* P_m U \ket{\phi}\ket{0} = \bra{\phi} M_m^* M_m \ket{\phi} \]\pause 
+        \item The joint state of the system QM, given that result $m$ occurs is \[\frac{P_m U \ket{\psi}\ket{0}}{\sqrt{\bra{\psi}U^* P_m U \ket{\psi}}} = \frac{M_m \ket{\psi} \ket{m}}{\sqrt{\bra{\psi}M_m^* M_m \ket{\psi}}}\]\pause 
+        \item As the state of the system $M$ after measurement is given by $\ket{m}$, it follows that the final state of the system $Q$ after measurement is given by $\frac{M_m \ket{\psi}}{\sqrt{\bra{\psi}M_m^* M_m \ket{\psi}}}$\pause 
+    \end{itemize}
+    
+    Conclusion -- Thus unitary dynamics and projective measurements alongwith the ability to introduce ancilla systems enables us to implement general measurements, as described in postulate three.
+\end{frame}
+\begin{frame}{POVMs}
+\begin{itemize}
+\item Convenient formalism of measurement.\pause
+\item Useful when we care about only the measurement statistics and not the output states.\pause
+\item Formally, any set of operators $E_m$ form a POVM if \pause
+\begin{enumerate}
+\item Each $E_m$ is positive.\pause
+\item $\sum_m E_m = I$\pause
+\end{enumerate}
+\item We have the probabilities\pause
+\[p(m) = \langle\psi|E_m|\psi\rangle\]\pause
+\item Can go from a measurement set $M_m$ to a POVM $E_m$ by defining $E_m \equiv M_m^*M_m$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{A use of POVMs}
+\begin{itemize}
+    \item Consider the states $\ket{\psi_1}=\ket{0}$ and $\ket{\psi_2}=\frac{\ket{0}+\ket{1}}{\sqrt{2}}$. Distinguishing between these states is impossible. However, it is possible to distinguish the states by measurement for some of the time such that if an identification is made, it is always correct.
+\pause
+    \item Let the POVM $= \{{E_1}, {E_2}, {E_3}\}$ contain three operators \[E_1 = \frac{\sqrt{2}}{\sqrt{2} + 1} \ket{1} \bra{1} \] \[ E_2 = \frac{\sqrt{2}}{\sqrt{2} + 1} \frac{(\ket{0} - \ket{1})(\bra{0} - \bra{1})}{2}\] \[E_3=  I - E_1 - E_2\]
+    \item Notice that $\bra{\psi_1} E_1\ket{\psi_1}=0$ and $\bra{\psi_2} E_2\ket{\psi_2}=0$. So after the POVM measurement, if we get $E_1$ as a result, then we can conclude that $\ket{\psi_1}$ is not the state, and $\ket{\psi_2}$ must have been the state. The same logic can be applied to the pair $E_2$ and $\ket{\psi_2}$. However, if we observe $E_3$ we cannot comment anything on the state. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Quantum Operations: Beyond Unitaries}
+    \begin{itemize}
+        \item Natural Extension of unitary operations (\textcolor{red}{Church of Larger Hilbert Space}): 
+             \[\E(\rho) = Tr_{env}(U(\rho\otimes\rho_{env})U^*) \]
+        \item Discard the environment: need some axioms.\pause
+        \begin{enumerate}
+            \item $Tr[\E(\rho)] \in [0,1] \forall \rho$ ($Tr[\E(\rho)]$ is the probability that $\rho$ undergoes the transformation $\E$).\pause
+            \item Convex linearity
+            \[\E(\sum_ip_i\rho_i) = \sum_ip_i\E(\rho_i)\]
+            for all density matrices $\rho_i$ and probabilities $p_i$ s.t. $\sum_ip_i = 1$
+            \item $\E$ is completely positive. Not only does $\E$ preserve positivity, $(I\otimes\E)$ also preserves positivity for $I$ being the identity on an aribtrarily dimensional system's hilbert space.\pause
+        \end{enumerate}
+    \end{itemize}
+Formally, 
+\[\E: L(\Hilb_1) \to L(\Hilb_2) \in C(\Hilb_1,\Hilb_2)\]
+\end{frame}
+
+\begin{frame}{The operator sum representation}
+    \begin{block}{Theorem 8.1 of QCQI}
+    The map $\E$ satisfies the axioms for a valid quantum operation iff there exists a set of operators $\{E_i\}$ such that  \[\E(\rho) = \sum_iE_i\rho E_i^*\]
+for all valid density matrices $\rho$ and $0 \preccurlyeq\sum_iE_i^*E_i \preccurlyeq I$
+    \end{block}
+     Note: $A\preccurlyeq B$ if $B-A$ is PSD.
+\pause
+So if we are just dealing with CPTP maps, then these $E_i$ satisfy $\sum_iE_i^*E_i = I$, and are called the \textit{kraus operators.}
+\end{frame}
+
+\begin{frame}{Quantum computers in a classical world}
+    \begin{itemize}
+        \item The challenge in designing substrates for QIC lies around the fact that quantum systems \textit{decohere}.\pause 
+        \item This decoherence cannot be reversed easily. \textcolor{red}{Not unitary}!\pause 
+        \item A more general transformation. \pause 
+        \item For example, \textit{dephasing}:
+        \begin{equation}
+            \rho \mapsto (1-p)\rho + pZ\rho Z
+        \end{equation}\pause 
+        \item Question: What are the Kraus operators for this channel?
+    \end{itemize}
+\end{frame}
+\begin{frame}{Some maffs}
+    \begin{enumerate}
+        \item \textbf{The Vectorization Map}: $\vec:L(\Hilb_2,\Hilb_1)\to \Hilb_1\otimes\Hilb_2$, defined as 
+        \[\ket{vec(\ket{a_1}\bra{b_2})}:= \ket{a_1}\otimes\ket{b_2}\]\pause 
+        Thus, the vec map takes operators in $L(\Hilb)$ to vectors in $\Hilb\otimes\Hilb$.\pause 
+        \item \textbf{The Choi Representation} $\J:T(\Hilb_1,\Hilb_2) \to L(\Hilb_2\otimes \Hilb_1)$ 
+        \[J(\E) := (\E\otimes \iden_{L(\Hilb_1)})(\ket{\vec(\iden_{\Hilb_1})}\bra{\vec(\iden_{\Hilb_1})})\]\pause 
+        Note that $\ket{\vec(\iden_{\Hilb_1})}$ is a vector in $\Hilb_1\otimes\Hilb_1$, and thus $(\ket{\vec(\iden_{\Hilb_1})}\bra{\vec(\iden_{\Hilb_1})})$ is a operator on $\Hilb_1\otimes\Hilb_1$. Now, we know that $\E$ takes operators from $L(\Hilb_1)$ to $L(\Hilb_2)$, and $\iden_{L(\Hilb_1)}$ takes operators from $L(\Hilb_1)$ to $L(\Hilb_1)$. Thus, $J(\E)$ lies in $L(\Hilb_2\otimes \Hilb_1)$.\pause \\ 
+        If $\Hilb_1 = \Hilb_2$, 
+        \[J(\E) = \sum_{i,j}\E(\ket{i}\bra{j}) \otimes \ket{i}\bra{j}\]
+    \end{enumerate}
+    
+\end{frame}
+\begin{frame}{Some maffs}
+    \begin{block}{The Choi Theorem}
+        If $\E:\Hilb\to\Hilb$ is a quantum channel with kraus operators $\{A_i\}$, then, 
+        \[\J(\E) = \sum_i\ket{\vec(A_i)}\bra{\vec(A_i)}\]
+        
+    \end{block}\pause 
+    \textbf{Questions}\pause 
+    \begin{enumerate}
+        \item     Compute the Choi operator, $\mathcal{J}(\mathcal{E})$ for the channel with the following action:
+    \[\rho \mapsto (1-p)\rho + \frac{p}{3}Z\rho Z + + \frac{p}{3} Y\rho Y + + \frac{p}{3}X\rho X\]\pause 
+\item     Suppose, 
+    \[\J(\E) = \frac{2}{3}\ket{\phi^-}\bra{\phi^-} + \frac{4}{3}\ket{\psi^+}\bra{\psi^+}\]
+Calculate the Kraus operators for $\E$.   
+
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Distinguishing quantum states}
+    \begin{itemize}
+        \item Setting: Alice chooses the ensemble $\{p_i,\rho_i\}$ of length $n$, samples a state from it and sends to Bob. \pause 
+        \item Bob can conduct a $n-$port measurement, and wants to determine which state was sent. \pause 
+        \item Strategy: Develop a measurement apparatus $\{M_i\}$ s.t. if outcome is at port $i$, decode $\rho_i$.\pause 
+        \item Formally,
+        \begin{equation}
+            \max_{\{M_i\}}\textcolor{red}{\sum_ip_i\text{Tr}(M_i\rho_i)} \text{ with } M_i \geq 0,~\sum_iM_i = 1
+        \end{equation}\pause 
+        \item What is the quantity in red?
+    \end{itemize}
+\end{frame}
+\begin{frame}{Distinguishing states: the two state case}
+    \begin{itemize}
+        \item $p_1 = p, p_2 = 1-p$.\pause
+        \item Let $\rho := p\rho_1 + (1-p)\rho_2$, and $X := p\rho_1 - (1-p)\rho_2$\pause
+        \item Then,
+        $p_{success} = \frac{1}{2}\left[1 + Tr((M_1-M_2)X)\right] \underbrace{\leq \frac{1}{2}\left[1 + ||X||_1\right]}_{\text{Holevo-Helstrom Bound}}$\pause
+        \item Decompose
+        \begin{equation}
+            X = Q - R \text{ (Spectral, Hahn-Jordan) w/} Q,R \geq 0
+        \end{equation}
+        and let $M_1 = Q$. \pause
+        \item \textit{Check}, that $Tr((M_1-M_2)X) = ||X||_1$. 
+        \item Now have the optimal measurement set.
+    \end{itemize}
+\end{frame}
+\begin{frame}{Shannon Entropies}
+    \begin{itemize}
+        \item Distribution $p(x)$. R.V. $X\sim p(x)$. Define,
+        \begin{equation}
+           H(X) =  H(p) := -\sum_{x\in\mathcal{X}}p(x)\log_2(p(x)) = -\mathbb{E}_{x\sim p(x)}(\log(p(x)))
+        \end{equation}\pause 
+        \item All sorts of cousins exist.\pause 
+        \begin{enumerate}
+            \item Joint entropy for $X,Y \sim p(x,y)$
+            \begin{equation}
+                H(X,Y) = -\mathbb{E}_{x,y\sim p(x,y)}(\log(p(x,y)))
+            \end{equation}\pause 
+            \item Conditional entropy  
+            \begin{equation}
+                H(X|Y) = \mathbb{E}_{y\sim p(y)}[H(X|Y=y)]
+            \end{equation}\pause 
+        \item \textbf{Chain rule}
+        \begin{align}
+            H(X,Y) &= H(X) + H(Y|X) \\ 
+            H(X,Y|Z) &= H(X|Z) + H(Y|X,Z)
+        \end{align}
+
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+\begin{frame}{Shannon Entropies}
+    \begin{itemize}
+        \item Relative entropy
+        \begin{equation}
+            D(p||q) := \sum_{x\in\mathcal{X}}p(x) \log_2\frac{p(x)}{q(x)} \textcolor{red}{~\geq 0}
+        \end{equation}\pause 
+        Not symmetric. But, $D(p||q) = 0 \Leftrightarrow p = q$. \pause 
+        \item \textbf{Mutual information}
+        \begin{equation}
+            I(X:Y) := D(p_{XY}(x,y)||p_X(x)p_Y(y)) \textcolor{red}{~\geq 0}
+        \end{equation}\pause 
+        Symmetric.\pause 
+        \item Mutual information with entropies
+        \begin{align}
+            I(X:Y) &= H(X) - H(X:Y) \\ 
+            I(X:Y) = H(X) + H(Y) - H(X,Y)
+        \end{align}\pause 
+        \item Exercise: Chain rule for relative entropy
+        \begin{equation}
+            D(p(x,y)||q(x,y)) = D(p(x)||q(x)) + D(p(y|x)||q(y|x))
+        \end{equation}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Shannon and the entropies: Quantumania}
+    \begin{itemize}
+        \item Von-Neumann entropy
+        \begin{equation}
+            S(\rho) = -\text{Tr}(\rho\log{\rho})
+        \end{equation}\pause 
+        Use? Entanglement? How?\pause 
+        \item See that if $\rho = \sum_i p_i\ket{i}\bra{i}$ (spectral), then
+        \begin{equation}
+            S(\rho) = H(\mathbf{p})
+        \end{equation}\pause 
+        \item Conditional quantum entropy
+        \begin{equation}
+            S(A|B) = S(A,B) - S(B)
+        \end{equation}\pause 
+        Can be negative! Why? Can it be negative classically?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Shannon and the entropies: Quantumania}
+    \begin{itemize}
+        \item Exercise: Additivity
+        \begin{equation}
+            S(\rho\otimes\sigma) = S(\rho) + S(\sigma)
+        \end{equation}\pause 
+        \item Exercise: Consider a classical quantum state
+        \begin{equation}
+            \rho_{XB} = \sum_{x\in\mathcal{X}}p_X(x)\ket{x}\bra{x} \otimes \rho_B^x
+        \end{equation}\pause 
+        What is the entropy of this state? Answer,
+        \begin{equation}
+            S(XB) = S(\mathbf{p}(X)) + \sum_{x\in\mathcal{X}}p_X(x)S(\rho_B^x)
+        \end{equation}\pause 
+        \item \textbf{Fact}. For bipartite pure states $\ket{\psi} \in \Hilb^A\otimes\Hilb^B$, the VN entropy of a bipartition is a measure of \textcolor{red}{entanglement} in the state $\psi$. \pause 
+        \begin{enumerate}
+            \item Does it matter which bipartition I choose?\pause 
+            \item Compute the EE for \pause 
+            \begin{itemize}
+                \item $\psi = (\ket{00} + \ket{11})/\sqrt{2}$\pause 
+                \item $\psi = (\ket{00} + \ket{01} + \ket{10} + \ket{11})/2$
+            \end{itemize}
+        \end{enumerate}
+    \end{itemize}    \end{frame}
+    \begin{frame}{Quantum entropies: more}
+        \begin{itemize}
+        \item Quantum relative entropy \pause 
+        \begin{equation}
+            S(\rho||\sigma) = Tr(\rho\log\rho - \rho\log\sigma) \textcolor{red}{\geq 0}\pause 
+        \end{equation}
+            \item Subadditivity 
+            \begin{equation}
+                S(A,B) \leq S(A) + S(B)
+            \end{equation}\pause 
+            with equality if?\pause Proof?\pause 
+            \item  Strong subadditivity
+            \begin{equation}
+                S(A, B, C) + S(B) \leq  S(A, B) + S(B, C)
+            \end{equation}
+            
+        \end{itemize}
+
+\end{frame}
+
+\end{document}
+%https://algebrology.github.io/tag/topology/

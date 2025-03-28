@@ -1,0 +1,98 @@
+\subsection{Linear Algebra}
+\subsubsection{Spaces and Composition of Spaces}
+The book defines complex euclidean spaces in a way unfamiliar to a standard user of linear algebra. So we shall make some effort highlighting the differences. An alphabet (usually denoted by capital greek letters $\Sigma,\Gamma$ etc.) is a set of symbols (usually denoted by small letters $a,b,c $ etc.). 
+\begin{definition}[Complex Eucliedean Space]
+For any alphabet $\Sigma$, we define the space associated with it, $\C^{\Sigma}$ as follows,
+\[\C^{\Sigma} := \{f|f:\Sigma\to\C\ \text{ is a function}\}\]
+A vector space defined in this way will be called a complex euclidean space. 
+\end{definition}\noindent
+For some $u \in \C^{\Sigma}$, the `indexing' is done as $u(a)$ for some $a\in\Sigma$. Addition and scalar multiplication are defined as usual. Such spaces will be denoted by scripted capital letters such as $\X,\Y,\Z$ etc. Vectors in these spaces will be denoted as $x,y,z,u$ etc. The standard basis of $\C^{\Sigma}$ is the orthonormal basis given by $\{e_a | a \in \Sigma\}$ where $e_a(b) = \delta_{ab} \forall a,b\in\Sigma$.
+
+
+\noindent In QI, we often deal with multiple systems (or \textit{registers}\footnote{as we shall later see}), and a need to combine vector spaces arises. Thus we make some definitiions.
+\begin{definition}[Direct Sums]
+Let $\X_i = \C^{\Sigma_i}$ for $i = 1,2 \dots n$. First define,
+\[\Sigma_1\sqcup\dots\Sigma_n := \bigcup_{k = 1,2\dots n}\{(k,a)|a\in\Sigma_k\}\]
+This is called the \textit{disjoint union}. Now, wefine the space $\X_1\oplus\X_2\dots\X_n$ as
+\[\X_1\oplus\X_2\dots\X_n := \C^{\Sigma_1\sqcup\dots\Sigma_n}\]
+\end{definition}\noindent 
+Intuitively, a vector in the direct sum of two spaces is formed by stacking vectors from the two spaces. Hence, $u_1\oplus \dots u_n$ may be viewed as 
+\[\begin{pmatrix}u_1\\u_2 \\ \vdots \\ u_n
+\end{pmatrix}\]
+The following identities hold,
+\begin{itemize}
+    \item $(u_1\oplus\dots u_n) + (v_1\oplus\dots v_n) := (u_1+v_1) \oplus \dots (u_n+v_n)$.
+    \item $\alpha(u_1\oplus\dots u_n) := (\alpha u_1)\oplus\dots (\alpha u_n)$.
+    \item $\langle u_1\oplus\dots u_n,v_1\oplus\dots v_n\rangle := \langle u_1,v_1\rangle + \dots \langle u_n,v_n\rangle$.
+\end{itemize}
+
+Now, we describe an even more important way of combining vector spaces, called the tensor product.
+\begin{definition}[Direct Sums]
+Let $\X_i = \C^{\Sigma_i}$ for $i = 1,2 \dots n$. Now, we define the space $\X_1\otimes\X_2\dots\otimes\X_n$ as
+\[\X_1\otimes\X_2\dots\otimes\X_n := \C^{\Sigma_1\times\dots\times\Sigma_n}\]
+where $\times$ denotes the cartesian product.
+\end{definition}\noindent 
+Intuitively, a tensor product of two vectors is formed by multiplying each element of the first vector by the second. As an example, take $u = (a,b)^T$ and $v = (c,d)^T$. We have, 
+\[u\otimes v = \begin{pmatrix}av \\ bv\end{pmatrix} = \begin{pmatrix}ac \\ ad\\ bc\\bd\end{pmatrix}\]
+It is left to the reader to correlate this with the definition.
+
+\noindent 
+The following indentities hold,
+\begin{itemize}
+    \item $(u_1\otimes\dots\otimes u_n)(a_1,a_2,\dots,a_n) := u_1(a_1)u_2(a_2)\dots u_n(a_n)$
+    \item $u_1\otimes\dots\otimes u_{k-1}\otimes(au_k+bv_k)\otimes u_{k+1} \otimes\dots\otimes u_n 
+    := a(u_1\otimes\dots\otimes u_{k-1}\otimes u_k\otimes u_{k+1} \otimes\dots\otimes u_n ) + b(u_1\otimes\dots\otimes u_{k-1}\otimes v_k\otimes u_{k+1} \otimes\dots\otimes u_n )$
+    \item $\langle u_1\otimes\dots\otimes u_n,v_1\otimes\dots\otimes v_n\rangle := \prod_{i=1}^{n} \langle u_i,v_i\rangle$
+\end{itemize}
+Vectors of the form $ u_1\otimes\dots\otimes u_n$ are called \textit{elementary tensors}. These span the space, but not every vector in is an elementary tensor\footnote{implications to follow in the later sections}.
+\subsubsection{Linear Operators}
+\begin{itemize}
+    \item Given spaces $\X$ and $\Y$, we define 
+    \[L(\X,\Y):= \{A\mid A:\X\to\Y \text{ is a linear operators}\}\]
+    It is easy to see that $L(\X,\Y)$ forms a vector space with commonly defined addition and scalar multiplication. Additionally, we denote $L(\X,\X)$ as $L(\X)$.
+    \item We can define an inner product on $L(\X,\Y)$ as
+    \[\langle A,B\rangle := Tr[A^*B]\]
+    \item Matrices? We define a matrix over $\C$ as a mapping of the form
+    $M : \Gamma\times\Sigma\to\C$
+    for some alphabets $\Sigma$ and $\Gamma$. For $a \in \Gamma$ and $b\in\Sigma$, we call the value $M(a,b)$ the $(a,b)^{th}$ entry of $M$, where $a$ is the row index and $b$ is the column index. Addition and scalar or matrix multiplication are defined as usual. 
+    \item For $\X= \C^{\Sigma}$ and $\Y = \C^{\Gamma}$ there is a bijective map between $L(\X,\Y)$ and the set of matrices $M:\Gamma\times\Sigma\to\C$. This is given by 
+    \begin{enumerate}
+        \item $M_A(a,b) = \langle e_a,Ae_b\rangle$ for $e_a\in\Y$ and $e_b\in\X$.
+        \item $(A_Mu)(a) = \sum_{b\in\Sigma}M(a,b)u(b)$ for all $a\in\Gamma$.
+    \end{enumerate}
+    Owing to this, we simply denote $A(a,b) = \langle e_a,Ae_b\rangle$ with some abuse of notation.
+    \item For the space $L(\X = \C^{\Sigma},\Y = \C^{\Gamma})$, we have the standard basis given by $E_{ab}$ for all $a\in\Gamma$ and $b\in\Sigma$. Where $E_{ab}(c,d) := \delta_{ac}\delta_{bd}$.
+    \item Tensor product of operators. We shall describe these in a bit detail. Suppose $\X_i = \C^{\Sigma_i}$ and $\Y_i = \C^{\Gamma_i}$ for $i = 1,2\dots n$. For $A_i\in L(\X_i,y_i)$, we have the operator
+    \[A_1\otimes\dots\otimes A_n\in L(\X_1\otimes\dots\otimes\X_n,\Y_1\otimes\dots\otimes\Y_n)\]
+    defined as
+    \[(A_1\otimes\dots\otimes A_n)(u_1\otimes\dots\otimes u_n) = (A_1u_1)\otimes\dots\otimes(A_nu_n)\]
+    The following holds
+    \begin{enumerate}
+        \item $(A_1\otimes\dots A_n)(a_1,a_2,\dots a_n) := A_1(a_1)A_2(a_2)\dots A_n(a_n)$
+    \item $A_1\otimes\dots\otimes A_{k-1}\otimes(aA_k+bB_k)\otimes A_{k+1} \otimes\dots\otimes A_n := a(A_1\otimes\dots\otimes A_{k-1}\otimes(A_k)\otimes A_{k+1} \otimes\dots\otimes A_n ) + b(A_1\otimes\dots\otimes A_{k-1}\otimes(B_k)\otimes A_{k+1} \otimes\dots\otimes A_n )$
+        \item If we have $C_i\in L(\Y_i,\Z_i)$,
+        \[(C_1\otimes\dots\otimes C_n)(A_1\otimes\dots\otimes A_n) := (C_1A_1)\otimes\dots\otimes(C_nA_n)\]
+        \item $(A_1\otimes\dots\otimes A_n)^T := (A_1^T\otimes\dots\otimes A_n^T)$
+        \item $\overline{(A_1\otimes\dots\otimes A_n)} = (\Bar{A_1}\otimes\dots\otimes \Bar{A_n})$
+        \item $(A_1\otimes\dots\otimes A_n)^* := (A_1^*\otimes\dots\otimes A_n^*)$
+    \end{enumerate}
+    \item Some important classes of operators
+    \begin{enumerate}
+        \item Positive operators. A positive semidefinite is one which can be written as $X = Y^*Y$ for some operator $Y$. We define
+        \[Pos(\X) := \{Y^*Y|Y\in L(\X)\}\]
+        \item Density Operators. Positive semidefinite operators having unit trace are called density operators. Also, we define
+        \[D(\X) := \{\rho\in Pos(\X)| Tr(\rho) = 1\}\]
+    \end{enumerate}
+\end{itemize}
+\subsubsection{The Vectorization Map}
+This is a particulary important concept in quantum information. Definitely deserves its own subsubsection. There is a correspondence between the spaces $L(\Y,\X)$ and $\X\otimes\Y$ for spaces $\X = \C^{\Sigma}$ and $\Y = \C^{\Gamma}$ given by the map
+\[vec: L(\Y,\X) \to \X\otimes\Y\]
+defined by 
+\[vec(E_{ab}) = e_a\otimes e_b\]
+for all $a\in\Sigma$ and $b\in\Gamma$. This mapping is a linear bijection. It is also an isometry, because, 
+\[\langle A,B\rangle = \langle vec(A),vec(B)\rangle \text{ for all } A,B\in L(\X,\Y)\]
+Some useful identities,
+\begin{itemize}
+    \item $Tr_Y(vec(A)vec(B)^*) = AB^*$.
+    \item $Tr_X(vec(A)vec(B)^*) = A^T\bar{B}$.
+\end{itemize}

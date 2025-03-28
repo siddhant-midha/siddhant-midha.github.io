@@ -1,0 +1,124 @@
+\subsection{Quantum Channels}
+\begin{definition}{Quantum Channels}
+A \textit{quantum channel} (or just channel) is a linear map
+\[\Phi: L(\X)\to L(\Y)\]
+that is, $\Phi\in T(\X,\Y)$ which satisfies
+\begin{enumerate}
+    \item $\Phi$ is completely positive.
+    \item $\Phi$ is trace preserving.
+\end{enumerate}
+\end{definition}
+The set of all such channels is called $C(\X,\Y)$. As usual, we denote $C(\X,\X)$ as $C(\X)$. 
+
+\noindent Intuitively, for registers \textsf{X} and \textsf{Y}, one may view a channel $\Phi \in C(\X,\Y)$ as the process of destroying \textsf{X} and creating \textsf{Y}, a transformation of \textsf{X} into \textsf{Y}. When \textsf{X = Y}, one may simply view it as changing the state of \textsf{X}.
+\begin{pfact}
+In quantum mechanics we usually deal with unitary evolution of quantum states. Since density operators are more general than pure states, naturally we expect they can undergo transformations which are not necessarily unitary! We shall see this soon.
+\end{pfact}
+\begin{example}
+\hphantom{as}
+\begin{itemize}
+\item (Unitary Channels) The map $\Phi\in C(\X)$ given by $\Phi(X) = UXU^*$ for some $U\in U(\X)$ is called a unitary channel.
+    \item (Replacement Channels) The map $\Phi\in C(\X,\Y)$ given by $\Phi(X) = Tr(X)\sigma$ for some $\sigma\in D(\Y)$ is called a replacement channel.
+\end{itemize}
+\end{example}
+As we have dealt with product states, we also have product channels. A channel $\Phi\in C(\X_1\otimes\X_2\dots\X_n,\Y_1\otimes\Y_2\dots\Y_n)$ is called a product channel if 
+\[\Phi = \phi_1\otimes\phi_2\dots\phi_n\]
+for $\phi_i\in C(\X_i,\Y_i)$. Intuitively, a channel being a product channel represents an independent application of channels to a sequence of registers.
+
+
+\noindent The next subsection goes out to fans of representation theory.
+\subsubsection{Representing Quantum Channels}
+In certain situations, we might want to have a concrete \textit{represenetation} of a quantum channel rather than treat it as an abstract map. We discuss three representations here.
+\begin{enumerate}
+    \item \textit{The Choi Representation}
+    \\\noindent  For spaces $\X,\Y$, define $J:T(\X,\Y)\to L(\Y\otimes\X)$ as
+    \[J(\Phi) = (\Phi\otimes\iden_{L(\X)})(vec(\iden_{\X})vec(\iden_{\X})^*) \text{ for all } \Phi \in T(\X,\Y)\]
+    If $\X = \C^{\Sigma}$ we have
+    \[J(\Phi) = \sum_{a,b\in\Sigma}\Phi(E_{ab})\otimes E_{ab}\]
+    $J(\Phi)$ is called the \textit{Choi Representation} of $\Phi$. The mapping $J$ is a bijection. The rank of $J(\Phi)$ is called the \textit{Choi Rank} of $\Phi$.
+    \item \textit{Kraus Operators}\\\noindent 
+    For spaces $\X$ and $\Y$, and for some alphabet $\Sigma$ if we have collections of operators $A_a,B_a\in L(\X,\Y)$ for $a\in\Sigma$, we may define 
+    \[\Phi(X) := \sum_{a\in\Sigma}A_aXB_a^*\]
+    We usually deal with the case when $A_a = B_a$ for all $a \in \Sigma$. We will see that such representations exist for CPTP channels, but they are \textit{not} unique.
+    \item \textit{Stinespring Representations}
+    \\ \noindent 
+    For spaces $\X,\Y$ and $\Z$, and operators $A,B\in L(\X,\Y\otimes\Z)$ we can define $\Phi\in T(\X,\Y)$ as 
+    \[\Phi(X) = Tr_{Z}(AXB^*) \text{ for all } X\in L(\mathcal{X})\]
+    Similar to kraus representations, we commonly encounter $A=B$ and such representations exist for CPTP maps but are not unique.
+    
+\end{enumerate}
+Now, let us see some relations between these representations.
+\begin{lemma}[Relations]
+Let spaces $\X,\Y$ and $A_a,B_a\in L(\X,\Y)$ for $a\in\Sigma$, and $\Phi\in T(\X,\Y)$. The following statements are equivalent.
+\begin{enumerate}
+    \item The Choi Representation is
+    $$J(\Phi) = \sum_{a\in\Sigma}vec(A_a)vec(B_a)^*$$
+    \item The Kraus Representation is
+\[\Phi(X) = \sum_{a\in\Sigma}A_aXB_a^*\]
+\item For $\Z = \C^{\Sigma}$ and $A,B\in L(\X,\Y\otimes\Z)$ defined as
+$A := \sum_aA_a\otimes e_a$ and $B := \sum_a B_a\otimes e_a$ we have the stinespring representation as
+\[\Phi(X) = Tr_Z(AXB^*)\]
+\end{enumerate}
+
+\end{lemma}
+With this, we have an important corollary.
+\begin{corollary}
+For spaces $\X,\Y$ and a nonzero map $\Phi\in T(\X,\Y)$ let $r = rank(J(\Phi))$ be its choi rank. Then,
+\begin{enumerate}
+    \item There exists a kraus representation of $\Phi$ with $|\Sigma| = r$.
+    \item There exists a stinespring representation of $\Phi$ with $dim(\Z) = r$.
+\end{enumerate}
+\end{corollary}
+Now, let us see a useful result which charecterizes CPTP maps.
+\begin{theorem}[CPTP Maps]
+Let $\Phi\in T(\X,\Y)$ a map. The following are equivalent.
+\begin{enumerate}
+    \item $\Phi$ is a quantum channel (CPTP map).
+    \item $J(\Phi) \in Pos(\Y\otimes\X)$ and $Tr_Y(J(\Phi)) = \iden_X$.
+    \item There exists alphabet $\Sigma$ and collection $\{A_a|a\in\Sigma,A_a \in L(\X,\Y)\}$ such that $\sum_{a\in\Sigma}A_a^*A_a = \iden_X$ and
+    \[\Phi(X) = \sum_{a\in\Sigma}A_aXA_a^*\]
+    Further, this holds for $|\Sigma| = rank(J(\Phi))$.
+    \item There exists an isometry $A\in U(\X,\Y\otimes\Z)$ for osme space $\Z$ such that
+    \[\Phi(X) = Tr_Z(AXA^*)\]
+    Further, this holds for $dim(\Z) = rank(J(\Phi))$.
+\end{enumerate}
+\end{theorem}
+Let us see some more examples of channels with their representations.
+\begin{itemize}
+    \item Completely depolarizing channel: $\Omega \in C(\X)$ for $\X = \C^{\Sigma}$ is defined as
+    \[\Omega(X) := Tr(X)\omega\]
+    where
+    \[\omega = \frac{\iden_X}{dim(\X)}\]
+    is the completely mixed state. That is, the completely depolarizing channel turns every state into the completely mixed state. We see that
+    \begin{enumerate}
+        \item The Choi Representation is
+        \begin{align*}
+            J(\Omega) &= \sum_{a,b\in\Sigma}\Omega(E_{ab})\otimes E_{ab} \\ 
+            &= \sum_{a,b\in\Sigma}\delta_{ab}\omega\otimes E_{ab}\\ 
+            &= \frac{\iden_X\otimes\iden_X}{dim(\X)}
+        \end{align*}
+        \item The Kraus Representation can be seen by noting that
+        \begin{align*}
+           J(\Omega) &= \frac{1}{dim(\X)}\sum_{ab}\ket{a}\bra{a}\otimes \ket{b}\bra{b}  \\ 
+           &= \frac{1}{dim(\X)}\sum_{ab}\ket{a}\ket{b}\otimes \bra{a}\bra{b}
+        \end{align*}
+        Now by the relation lemma, and the fact that $vec(\ket{a}\bra{b}) = \ket{a}\ket{b}$, see that the kraus operators are $E_{ab}/dim(\X)$ for $a,b\in\Sigma$.
+    \end{enumerate}
+    \item The completely dephasing channel: Let $\X = \C^{\Sigma}$ and define $\Delta \in T(\X)$ as
+    \[\Delta(X) := \sum_{a\in\Sigma}X(a,a)E_{aa}\]
+    That is, this channel kills off all the non diagonal entries of the density operator, leaving us in an essentially classical (probabilistic) state. Moreover, it is the identity on diagonal density operators.
+    \begin{enumerate}
+        \item The Choi Representation is given by
+        \begin{align*}
+            J(\Delta) &= \sum_{a,b\in\Sigma}\Delta(E_{ab})\otimes E_{ab} \\ 
+            &= \sum_{a\in\Sigma}E_{aa}\otimes E_{aa}
+        \end{align*}
+        \item (One of) The Kraus Representation is simply given by 
+        \[\Delta(X) = \sum_{a\in\Sigma}E_{aa}XE_{aa}^*\]
+        \item Stinespring: If we define $A:= \sum_{a\in\Sigma}(e_a\otimes e_a)e_a^*$ we have the stinespring representation as
+        \[\Delta(X) = Tr_Z(AXA^*)\]
+        for $\Z = \C^{\Sigma}$.
+    \end{enumerate}
+\end{itemize}
+
+
