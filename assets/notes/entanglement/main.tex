@@ -1,0 +1,171 @@
+\documentclass{article}
+%%%%%%%%
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=black
+}
+\newenvironment{pfact}
+    {\begin{center}
+    \textit{Physics Fact}\\
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+\usepackage{physics}
+\usepackage{soul}
+   \usepackage{xcolor}
+
+    \newcommand{\updateinfo}[1][\today]{\par\vfill\hfill{\scriptsize\color{gray}Last updated on July 7, 2022}}
+
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{titlesec}
+\usepackage{dsfont}
+\titleformat{\section}[block]{\Large\filcenter\bfseries}{\S\thesection.}{0.25cm}{\Large}
+\titleformat{\subsection}[block]{\large\bfseries\sffamily}{\S\S\thesubsection.}{0.2cm}{\large}
+\titleformat{\subsubsection}[block]{\large\bfseries\sffamily}{\S\S\S\thesubsubsection.}{0.15cm}{\large}
+\usepackage{physics}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\iden}{\mathds{1}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\w}{\wedge}
+\newcommand{\Sep}{\text{Sep}}
+\newcommand{\Prodc}{\text{Prod}}
+\newcommand{\Ent}{\text{Ent}}
+\renewcommand{\H}{\mathcal{H}}
+\renewcommand{\P}{\mathcal{P}}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{thmtools}
+\usepackage[most]{tcolorbox}
+\theoremstyle{definition}
+\usepackage{import}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{example}{Example}[subsection]
+\newtheorem{exercise}{Exercise}[subsection]
+
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}{Lemma}[subsection]
+\newtheorem{prop}{Proposition}[subsection]
+\newtheorem{definition}{Definition}[subsection]
+
+\definecolor{propcolor}{cmyk}{0,0,0,80}
+\definecolor{proofcolor}{cmyk}{0,0,0,80}
+\definecolor{theoremcolor}{cmyk}{0,0,0,80}
+\definecolor{corcolor}{cmyk}{0,0,0,80}
+\definecolor{defcolor}{cmyk}{0,0,0,80}
+\definecolor{lemmacolor}{cmyk}{0,0,0,80}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.4em}
+\usepackage{fancyhdr}
+\usepackage[a4paper, total={6.5in, 9in}]{geometry}
+
+\usepackage{natbib}
+
+\definecolor{mybgcolor}{RGB}{50, 50, 50} %46, 51, 63
+\usepackage{pagecolor}
+\pagecolor{mybgcolor}
+\color{white}
+ \usepackage{mdframed}
+\usepackage[T1]{fontenc}
+
+\usepackage{nameref}
+
+
+\usepackage{float}
+\usepackage{bm}
+\usepackage{circuitikz}
+\usepackage{parallel,enumitem}
+\pagenumbering{gobble}
+\usepackage{beramono}% monospaced font with bold variant
+ \usepackage{graphicx}
+\usepackage{listings}
+\usepackage{circuitikz}
+\lstdefinelanguage{SPICE}{
+   morekeywords={
+     plot, end, endc, ends, include, run, control,print,MODEL, include,model
+   },
+   morecomment=[l]*
+}
+ 
+\usepackage{xcolor}
+\colorlet{keyword}{blue!100!black!80}
+\colorlet{comment}{green!90!black!90}
+\lstdefinestyle{spice}{
+   language     = SPICE,
+   basicstyle   = \ttfamily,
+   keywordstyle = \color{keyword}\bfseries,
+   commentstyle = \color{comment}
+}
+ 
+ %%%%%%%%%%%%
+
+%\usepackage{minted}
+\title{}
+\author{Siddhant Midha}
+\date{}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[width=3cm]{pqi.png}
+        %\caption{An image of a galaxy}
+         \label{fig:pqi}
+    \end{figure}
+    {\scshape\LARGE  \par}
+    \vspace{1cm}
+    %{\scshape\Large Summer of Science '22\par}
+    %{\scshape Report\par}
+    \vspace{1.2cm}
+    {\huge\bfseries entanglement\par}
+        \vspace{0.3cm}
+
+    {\scshape \par}
+    \vspace{2cm}
+    {\Large Siddhant Midha\par}
+    \vfill
+   
+
+% Bottom of the page
+    {\large  }
+\updateinfo 
+\end{titlepage}
+\tableofcontents\newpage 
+\mdfsetup{backgroundcolor=mybgcolor, fontcolor=white}
+
+\newpage 
+\input{intro}
+\input{nparticle}
+
+\newpage 
+
+\bibliographystyle{unsrt}
+\bibliography{bibfile}% Produces the bibliography via BibTeX.
+
+
+
+\end{document}

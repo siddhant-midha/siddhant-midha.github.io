@@ -1,0 +1,10 @@
+\subsection{Transmission over a channel}
+The problem setting is as follows. We have a sender, an encoding scheme, a (possibly noisy) channel, a decoding scheme and then a receiver. The sender sends messages from the message set $[M]$ defined as
+\[[M] := \{1,2\dots m\}\]
+We model the noisy channel as a conditional probability distribution $p_{Y|X}(y|x)$. And as before, we shall transmit a message $m$ using a block encoding $x^n \equiv x_1x_2\dots x_n$ and then receive $y^n \equiv y_1y_2\dots y_n$ on the other side of the channel. The IID assumption again holds, so we have
+\[p_{Y^n|X^n}(y^n|x^n) = \Pi_{i=1}^np_{Y|X}(y_i|x_i)\]
+We also define the rate of a coding scheme as follows:
+\[\text{rate } \equiv \frac{\text{no. of message bits}}{no. of channel uses}\]
+Note that transmitting $x^n$ means using the channel $n$ times. So our rate is
+\[R = \frac{\log_2{M}}{n}\]
+With this, we define the \textit{capacity} of a cahnnel to be the highest rate at which it can communicate information reliably.

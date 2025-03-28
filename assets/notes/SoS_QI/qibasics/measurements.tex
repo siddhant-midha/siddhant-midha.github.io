@@ -1,0 +1,156 @@
+\subsection{Measurements}
+From an introductary knowledge of quantum mechanics, we know that measurements are associated with a `collapse of the wave function'. This involves reading out a classical value, known as the measurement outcome - some eigenvalue, and we consider the wavefunction to collapse to a eigenfunction with that eigenvalue. Here, we shall define measurements in two forms,
+\begin{enumerate}
+    \item The first way will only concern with the outputs of the measurement.
+    \item The second way will also talk about the state of the register after measurement.
+\end{enumerate}
+\subsubsection{The First Way}
+\begin{definition}
+A measurmenet is a function of the form
+\[\mu:\Sigma\to Pos(\X)\]
+for some choice of alphabet $\Sigma$ and a space $\X$, with the constraint,
+\[\sum_{a\in\Sigma}\mu(a) = \iden_{\X}\]
+\end{definition}
+A few points,
+\begin{itemize}
+    \item The set $\Sigma$ is the set of measurement outcomes.
+    \item Each $\mu(a)$ is a \textit{measurement operator} corresponding to the outcome $a$.
+    \item When this measurement happens, two things occur for a register in the state $\rho\in D(\X)$
+    \begin{enumerate}
+        \item An element $a$ of $\Sigma$ is selected with the probability $p(a) = Tr(\mu(a)\rho)$\footnote{The reader is encouraged to verify that this is a valid probability distribution.}, and is thrown out as the result of the measurement.
+        \item The register ceases to exist, and we cannot do any further work with it.
+    \end{enumerate}
+\end{itemize}
+\begin{pfact}
+One can associate this formalism with the POVM measurement set up. That is, we have a set of measurement operators $P_a \equiv \mu(a)$, and we can only talk about the measurement outcomes and the measurement statistics, and not about the post-measurement states. We shall alternate between the two notations.
+
+\end{pfact}
+An alternate, but \textit{equivalent}\footnote{to be proved!} way to describe this formalism is by identifying measurements as a channel. Let us define a useful kind of channel, called a quantum-classical channel. 
+\begin{definition}[Quantum-Classical Channel]
+Let $\Phi\in C(\X,\Y)$ be a channel. It is said to be Q2C if
+\[\Phi = \Delta\Phi\]
+for $\Delta\in C(\Y)$ denoting the completely dephasing channel in $\Y$.
+\end{definition}
+It is easy to see that every Q2C channel outputs a diagonal density matrix. This should be fairly intuitive in establishing the equivalence between Q2C channels and measurements as defined earlier. Formally, we have the following theorem.
+\begin{theorem}[Equivalence]
+Let $\X$ be a space and $\Sigma$ be an alphabet and let $\Y = \C^{\Sigma}$. The following facts hold,
+\begin{enumerate}
+    \item For every Q2C channel $\Phi\in C(\X,\Y)$ there exists a unique measurment $\mu:\Sigma \to Pos(\X)$ such that
+    \[\Phi(\rho) = \sum_{a\in\Sigma}E_{aa}Tr(\mu(a)\rho)\]
+    \item For every measurment $\mu:\Sigma\to Pos(\X)$ the mapping $\Phi\in T(\X,\Y)$ defined by the above equation is a Q2C channel.
+\end{enumerate}
+\end{theorem}
+Let us now discuss some particular types of measurements.
+\begin{itemize}
+    \item Essentially, every quantity we defined had a form wherein it factored out, so to speak. So, given a compound register \textsf{X} = (\textsf{Y}$_1$,\dots \textsf{Y}$_n$), if one has measurements on each of the subregisters as 
+    \[\mu_i:\Sigma_i\to Pos(\Y_i)\]
+    then we may define a composite measurement as 
+    \[\mu:\Sigma_1\times\Sigma_2\dots \Sigma_n\to Pos(\X)\]
+    as 
+    \[\mu(a_1,\dots a_n) = \mu_1(a_1)\otimes\dots\otimes \mu_n(a_n)\]
+    Such a measurement is called a \textit{product measurement}.
+    \item Again, we have a notion of doing something with only a subset of registers of a compound register. So, we talk about partial measurements. Given \textsf{X} = (\textsf{Y}$_1$,\dots \textsf{Y}$_n$), and a measurement
+    \[\mu_k:\Sigma\to Pos(\Y_k)\]
+    only on one register, for some $k\in[n]$. We demand two things of this measurement-
+    \begin{enumerate}
+        \item An outcome $a\in\Sigma$.
+        \item Specification of the register \textsf{X}/\textsf{Y}$_k$.\footnote{forgive the abuse of set notation}
+    \end{enumerate}
+    The Q2C way of describing helps us here. We can apply 
+    \[\Phi(Y) := \sum_{a\in\Sigma}Tr(\mu_k(a)Y)E_{aa}\forall Y\in L(\Y_k)\]
+    to the register \textsf{Y}$_k$, and then performing a permutation of registers, that is
+    \begin{center}
+        (\textsf{Y}$_1$,\dots,\textsf{Y}$_k$,\dots \textsf{Y}$_n$) $\to$ (\textsf{Y}$_1$,\dots,\textsf{Z},\dots \textsf{Y}$_n$) $\to$ (\textsf{Z},\textsf{Y}$_1$,\dots \textsf{Y}$_n$)
+    \end{center}
+    Thus we get
+    \[\sum_{a\in\Sigma}E_{aa}\otimes Tr_{Y_k}((\iden \otimes \dots \mu_k(a)\otimes \dots \iden)\rho)\]
+    If we let $\eta(a) := Tr_{Y_k}(\iden \otimes \dots \mu_k(a)\otimes \dots \iden)\rho$, each outcome $a$ occurs with the probability
+    \[p(a) = Tr(\eta(a)) = Tr(\mu(a)\rho[Y_k]\]
+    leaving the rest of the registers in the state
+    \[\frac{\eta(a)}{Tr(\eta(a))}\]
+    
+    
+\end{itemize}
+Let us now talk about projective measurements. Simply, a projective measurement is one for which the operators $\mu(a)$ are projections. That is $\mu(a)^2 = \mu(a)$ for all $a$. This we denote as $\mu(a)\in Proj(\X)$. The following lemma establishes an important fact, which we shall relate to with the next \textit{physics fact}.
+\begin{lemma}
+For alphabet $\Sigma$, and space $\X$ let $\mu:\Sigma\to Pos(\X)$ be a projective measurement. The set
+\[\{\mu(a)|a\in\Sigma\}\]
+is an orthogonal set.
+\end{lemma}
+\begin{pfact}
+In a standard treatment of quantum mechanics, we deal with \textit{measuring observables}. These observables are hermitian operators, and hence have a spectral decomposition as 
+\[O = \sum_mmP_m\]\footnote{note that I did not assume non-degenerate eigenvalues}
+where, $m$'s are the eigenvalues (the observed values) and $P_m$'s are the projectors onto the corresponding eigenspaces. Here, these $P_m$ take the form of the projective measurement, and upon measuring $m$ a state $\ket{\psi}$ collapses to $P_m\ket{\psi}$ (upto normalization). Also, in case we have full non-degeneracy we have $P_m = \ket{m}\bra{m}$ with $\ket{m}$ being the eigenket of $O$ with eigenvalue $m$.
+\end{pfact}
+Next up, we will answer the troubled physicists who have never dealt with any measurements except in the traditional projective sense. \footnote{Some might say, they are \textit{born} with it.}
+\begin{theorem}[Naimark's Theorem]
+Let $\X$ be a space and $\Sigma$ be an alphabet. Let $\mu:\Sigma\to Pos(\X)$ be a measurment and let $\Y = \C^{\Sigma}$. There exists an isometry $A \in U(\X,\X\otimes\Y)$ such that
+\[\mu(a) = A^*(\iden_X\otimes E_{aa})A\] 
+for $a\in\Sigma$.
+\end{theorem}
+With this we have the following corollary.
+\begin{corollary}
+Let $\X$ be a space and $\Sigma$ be an alphabet. Let $\mu:\Sigma\to Pos(\X)$ be a measurment and let $\Y = \C^{\Sigma}$. Further, let $\ket{u}\in\Y$ be a unit ket. There exists a projective measurement $\nu:\Sigma\to Pos(\X\otimes\Y)$ such that
+\[Tr(\nu(a)(X\otimes \ket{u}\bra{u})) = Tr(\mu(a)X)\]
+for all $\X\in L(\X)$.
+\end{corollary}
+\begin{pfact}
+Ah yes, reassurance. Why? The preceding corollary establishes that our measurement formalism (that is, POVMs) are equivalent to projective measurements at the cost of extending the register to a larger one. This motivates the following:
+\begin{enumerate}
+    \item \textit{General}\footnote{Nielson and Chuang use a different but related general measurement operator formalism, we shall get to that soon.} Measurements on a system are projective measurements on the system coupled with a large enough (as quantified by the corollary) environment.
+    \item Quantum Correlations are a thing. Our formalism is useful. If we accept that physical measurements correspond to hermitian observables (that is, projective measurements), then if we perform such a physical measurement on a system coupled with an environment, then the statistics of the system alone can not be described by a physical measurement. Thus the need for our (or POVM) formalism is justified.
+\end{enumerate}
+
+\end{pfact}
+Now that we are familiar with the concepts regarding measurements, let us ask a question.
+\begin{center}
+    Can we infer a state entirely from measurement statistic? What kind of a measurement should this be?
+\end{center}
+This translates to the map from density operator space to the space of probability vectors being injective, and is certainly an interesting thought. Let us define the following, and see why it answers this question.
+\begin{definition}[Information Complete Measurements]
+A measurement $\Sigma\to Pos(\X)$ for some space $\X$ is said to be information complete if it holds that 
+\[span\{\mu(a)|a\in\Sigma\} = L(\X)\]
+\end{definition}
+That is, from the probability vector of such a measurement defined by 
+\[p(a) \equiv Tr(\mu(a)\rho)\]
+we can infer $\rho$!\footnote{in the sense that no other state can lead to that statistics vector.}
+\begin{lemma}
+Let $\Sigma = \{1,2\dots n\}$, let $\X$ be a space and let $\{A_a|a\in\Sigma\} \subset L(\X)$ be a collection of operators for which 
+\[span\{A_a|a\in\Sigma\} = L(\X)\]
+Then, the mapping $\phi:L(\X)\to\C^{\Sigma}$ defined by 
+\[\phi(X) := (Tr(A_1X),Tr(A_2X)\dots Tr(A_nX)^T\]
+is injective. 
+\end{lemma}
+GIVE EXAMPLE!
+\subsubsection{The Second Way}
+Let us define the non-destructive measurements.
+\begin{definition}
+A non destructive measurement on the space $\X$ is described by an alphabet $\Sigma$ and a collection 
+\[\mathcal{M} = \{M_a|a\in\Sigma\} \subset L(\X)\]
+satisfying $\sum_{a\in\Sigma}M_a^*M_a = \iden$. Two things happen when $\mathcal{M}$\footnote{People often misconceptualize what `applying a measurement' means: It should not be confused with evolutions from operators from $\mathcal{M}$, it is the application of $\mathcal{M}$ (which includes hermitian observables) as a whole.} is applied to a register in the state $\rho$
+\begin{enumerate}
+    \item A symbol $a\in\Sigma$ is picked with probability
+    \[p(a) = Tr(M_a\rho M_a^*)\]
+    \item Conditioned on the $a$ selected, the state of the register is changed to
+    \[\frac{M_a\rho M_a^*}{Tr(M_a\rho M_a^*)}\]
+\end{enumerate}
+\end{definition}
+One can also talk about this procedure in an even more general sense with the CP maps
+\[\{\Phi_a|a\in\Sigma\} \subset CP(\X,\Y)\]
+with the constraint
+\[\sum_{a\in\Sigma}\Phi_a \in C(\X,\Y)\]
+Again, when applied to some register in the state $\rho\in D(\X)$, two things happen
+\begin{itemize}
+    \item An element $a\in\Sigma$ is selected at random with probability
+    \[p(a) = Tr(\Phi_a(\rho))\]
+    \item Conditioned on that selection, the register is transformed into a new register in the state
+    \[\frac{\Phi_a(\rho)}{Tr(\Phi_a(\rho))}\]
+\end{itemize}
+This formalism is called a \textit{quantum instrument}. It includes the general measurement formalism with the following definition
+\[\Phi_a(X) = M_aXM_a^*\]
+\begin{exercise}
+Show that the map $\Phi \in C(\X,\Z\otimes\Y)$ defined as
+\[\Phi(X) := \sum_{a\in\Sigma}E_{aa}\otimes\Phi_a(X)\]
+followed by a measurement on the Z register can implement any quantum instrument as defined above.
+\end{exercise}
+%-> look into compact sets etc. and then do extremal measurements.

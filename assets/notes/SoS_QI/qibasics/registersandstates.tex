@@ -1,0 +1,120 @@
+\subsection{Registers and Classical States}\label{subsec:registers}
+From a physical standpoint, a register is any entity which has something called a \textit{state}, which may change over time. From a computer science standpoint, it may be thought of as a data storage element. We shall, as expected, use a more abstract formulation.
+%\begin{lemma}\end{lemma}
+%\begin{lemma}\end{lemma}
+%\begin{lemma}\end{lemma}
+%\begin{lemma}\end{lemma}
+%\begin{lemma}\end{lemma}
+%\begin{lemma}\end{lemma}
+%\begin{lemma}\end{lemma}
+%\begin{prop}\end{prop}
+%\begin{prop}\end{prop}
+%\begin{prop}\end{prop}
+%\begin{prop}\end{prop}
+%\begin{prop}\end{prop}
+%\begin{prop}\end{prop}
+%\begin{prop}\end{prop}
+%\begin{definition}\end{definition}\noindent
+%\begin{definition}\end{definition}\noindent
+%\begin{definition}\end{definition}\noindent
+%\begin{definition}\end{definition}\noindent
+%\begin{definition}\end{definition}\noindent
+\begin{definition}[Registers]
+A register \textsf{X} is either one of the following objects,
+\begin{enumerate}
+\item (Simple Register) An alphabet $\Sigma$.
+\item (Compund Register) A tuple (\textsf{Y}$_1$, \textsf{Y}$_2$ ... \textsf{Y}$_n$) such that \textsf{Y}$_1$, ... \textsf{Y}$_n$ are all registers for some $n \in\N$.
+\end{enumerate}
+\end{definition}
+\subsubsection{Classical States}
+Now let us define the classical state set of a register.
+\begin{definition}[Classical State Set of a Register]
+The classical state set of a register \textsf{X} is determined as follows 
+\begin{enumerate}
+\item If \textsf{X} is simple, then the classical state is the associated alphabet $\Sigma$.
+\item If not, then if $\Sigma_1,\dots \Sigma_n$ are the alphabets of the subregisters, then the classical state of \textsf{X} is $\Sigma = \Sigma_1 \times \dots \times \Sigma_n$
+\end{enumerate}
+\end{definition}\noindent
+Elements of the classical state sets are called the classical\footnote{`classical' because `state' will usually refer to a quantum state} states. These are the states a register can be in at different points of time. If \textsf{X} = (\textsf{Y}$_1$, \textsf{Y}$_2$ ... \textsf{Y}$_n$), and $\Sigma_i$ is the state set of \textsf{Y}$_i$, then for a given state $(a_1,a_2 \dots a_n)$ of \textsf{X}, the state of \textsf{Y}$_i$ is $a_i$. Conversely, it is easy to determine the state of \textsf{X} given the states of all \textsf{Y}$_i$.
+
+\noindent In additional to classical states of a register \textsf{X}, we can also have \textit{probabilistic} states. A probabilistic state of a register \textsf{X} refers to a probability distribution over the state set of \textsf{X}. Formally, it is a probability vector $p\in\P(\Sigma)$. We shall now see how this is generalized in the quantum setting.
+\subsubsection{Quantum States}
+Associated to any register \textsf{X} with the state set $\Sigma$, we have a complex euclidean space $\X = \C^{\Sigma}$. It is good to note that if \textsf{X} = (\textsf{Y}$_1$, \textsf{Y}$_2$ ... \textsf{Y}$_n$), then $\X = \Y_1\otimes\dots\otimes\Y_n$. The reader is encouraged to verify this.
+\begin{definition}[Quantum States]
+A \textit{quantum state} of a register \textsf{X} is a density operator $\rho\in D(\X)$.
+\end{definition}
+\noindent We first note that $D(\X)$ is a convex set. Motivated by this, given a $\rho_a\in D(\X)\forall a\in\Gamma$ and a probability vector $p\in\P(\Gamma)$ for some alphabet $\Gamma$, we have that
+\[\rho = \sum_{a\in\Gamma}p(a)\rho_a \in D(\X)\]
+The operator $\rho$ describes a \textit{mixture} given by $\{\rho_a|a\in\Gamma\}$ as per the vector $p$. This means that a random selection of $a\in\Gamma$ according to the distribution $p$ results in the state of the register \textsf{X} being $\rho_a$. This can be more formally described as the following.
+\begin{definition}[Ensemble of States]
+For some alphabet $\Gamma$ and a complex euclidean space $\X$, define a map
+\[\eta:\Gamma\to Pos(\X)\]
+with the constraint 
+\[Tr(\sum_{a\in\Gamma}\eta(a)) = 1\]
+The map $\eta$ specifies as ensemble with the corresponding states as
+\[\rho_a = \frac{\eta(a)}{Tr(\eta(a))}\] and the probability vector $p = \{Tr(\eta(a))|a\in\Gamma\}$
+
+\end{definition}
+\noindent 
+Now, let us comment on the nature of these quantum states. We begin with the notion of \textit{pure states}.
+\begin{definition}[Pure States]
+A state $\rho\in D(\X)$ is said to be a pure state if it has rank one.
+Equivalently, $\rho$ is a pure state if there exits a unit vector $u\in\X$ such that $\rho = uu^*$.
+\end{definition}
+A pure state is, with some abuse of notation, often referred to as the vector $u$. Next up we have \textit{flat states}.
+\begin{definition}[Flat States]
+A quantum state $\rho\in D(\X)$ is said to be a flat state if it holds that \[\rho = \frac{\Pi}{Tr(\Pi)}\] for some non zero projection $\Pi \in Proj(\X)$.
+\end{definition}
+\noindent Now, with the definition of quantum states out of the way, we can explain a much intuitive idea - that probabilistic classical states are a restriction of quantum states. For some register \textsf{X} with the state set $\Sigma$ and a probabilistic state $p \in \P(\Sigma)$. We can associate the density operator $E_{aa}$ with the register being in the state $a$. Hence, we have
+\[p \equiv \sum_{a\in\Sigma}p(a)E_{aa}\]
+Hence a classical register can be thought of as a general quantum register whose density operator is restricted to be diagonal. Next up, are product states.
+\begin{definition}[Product States]
+Given a register \textsf{X} = (\textsf{Y}$_1$,\dots \textsf{Y}$_n$), a state $\rho\in D(\X)$ is said to be a product state if 
+\[\rho = \sigma_1\otimes\dots\otimes\sigma_n\]
+such that $\sigma_i\in D(\Y_i)$.
+\end{definition}
+Intuitively, a product state indicates independence between the subregisters. If the state of \textsf{X} is not a product state, it indicates towards some correlation betweent the subregisters \footnote{again, this notion will be made precise in one of the later sections}.
+
+\subsubsection{Reductions and Purification}
+To motivate this title, we can pose one question - for some compound register, what if we remove one of the subregisters? How do we describe the state of the leftover regiser then? This is perhaps easy to do for a classical state. If the state before removal is $(a_1,a_2\dots a_n)$, then after removing, say the first subregister we simply are in the state $(a_2\dots a_n)$. What follows below is \textit{the} way to do this for a quantum state.
+
+
+\noindent Consider \textsf{X} = (\textsf{Y}$_1$,\dots \textsf{Y}$_{k-1}$,\textsf{Y}$_{k}$,\textsf{Y}$_{k+1}$ \textsf{Y}$_n$). We can create a new register (\textsf{Y}$_1$,\dots \textsf{Y}$_{k-1}$,\textsf{Y}$_{k+1}$\dots  \textsf{Y}$_n$) by removing \textsf{Y}$_k$ from \textsf{X}. The state of the leftover system $\rho[\neg k]$ is defined as 
+\[\rho[\neg k] := Tr_k(\rho)\]
+where $Tr_k \in T(\Y_1\otimes\dots\otimes\Y_n,\Y_1\otimes\dots\Y_{k-1}\otimes\Y_{k+1}\otimes\dots\otimes\Y_n)$ is the \textit{partial trace} map. We have,
+\begin{enumerate}
+    \item $Tr_k(Y_1\otimes\dots\otimes Y_n) = Tr(Y_k)(Y_1\otimes Y_2\otimes\dots Y_{k-1}\otimes Y_{k+1} \otimes\dots\otimes Y_n)$
+    \item $Tr_k = I_1\otimes I_2\otimes \dots I_{k-1}\otimes Tr_k\otimes I_{k+1}\otimes \dots \otimes I_n$
+\end{enumerate}
+Example: Let \textsf{X} = (\textsf{Y},\textsf{Z}) be a compound register such that the state sets of the subregisters are both $\Sigma$. For the state
+\[\rho = \frac{1}{|\Sigma|}\sum_{a,b\in\Sigma}E_{ab}\otimes E_{ab}\]
+We have
+\[\rho[\not Z] = \frac{1}{|\Sigma|}\sum_{a,b\in\Sigma}E_{ab}Tr( E_{ab}) = \frac{1}{|\Sigma|}I_{\Y}\]
+Such a state is analogous to uniform distribution, and represents the most chaotic state a register could have. In fact, one can show that the state $\rho$ is a pure state (left to the reader). Thus, this example makes concrete the idea of correlations between subregisters.
+
+\noindent Thus, by applying this method iteratively, one can specify the state of a register after removal of any\footnote{the resulting object must be a valid register} number of subregisters. 
+
+\noindent
+As we discussed reductions, a natural idea is extensions. That is, a register \textsf{X} in the state $\rho$ can be viewed as a subregister of some `higher' register (\textsf{X},\textsf{Z}) in the state $\sigma$ such that
+\[\rho = Tr_Z(\sigma)\]
+$\sigma$ is called an extension of $\rho$. Now, the idea of purifying a state is simply to find such a \textsf{Z}  such that $\sigma$ is pure. More formally, we have
+\begin{definition}[Purification]
+Let $\mathcal{X}$ and $\mathcal{Y}$ be complex Euclidean spaces, let $P \in \operatorname{Pos}(\mathcal{X})$ be a positive semidefinite operator, and let $\ket{u} \in \mathcal{X} \otimes \mathcal{Y}$ be a vector. The vector $ket{u}$ is said to be a purification of $P$ if
+$$
+\operatorname{Tr}_{\mathcal{Y}}\left(\ket{u}\bra{u}\right)=P
+$$
+\end{definition}
+\noindent
+Recall that for spaces $\X$ and $\Y$, the vec mapping is a bijection from $L(\Y,\X) \to \X\otimes\Y$. Every vector $\ket{u}\in \X\otimes\Y$ can be written as $\ket{u} = vec(A)$ for some $A \in L(\Y,\X)$. Also,
+\[Tr_{\Y}(\ket{u}\bra{u}) = Tr_{\Y}(vec(A)vec(A)^*) = AA^*\]
+So in order to purify some positive $P$\footnote{we drop the trace condition without any loss of analytical work} it should be of the form $AA^*$. The following theorem makes this idea concrete.
+\begin{theorem}[The Purification Theorem]
+Let $\X,\Y$ be spaces. And let $P \in Pos(\X)$ be a positive semidefinite opeartor. There exists a vector $u \in \X\otimes\Y$ such that $Tr_{\Y}(\ket{u}\bra{u}) = P$ \textbf{iff} $dim(\Y) \geq rank(P)$.
+\end{theorem}\noindent 
+If the statement of the theorem is read carefully, one notices the `there exists a $\ket{u}$'. So can there be more than one such $\ket{u}$? 
+\begin{theorem}[Unitary Equivalence of Purifications]
+Let $\X$ and $\Y$ be complex euclidean spaces, and let $\ket{u},\ket{v}\in\X\otimes\Y$ be vectors such that
+\[Tr_{\Y}(\ket{u}\bra{u}) = Tr_{\Y}(\ket{v}\bra{v})\]
+Then, there exists a unitary $U\in U(\Y)$ such that $\ket{v} = (I_{\X}\otimes U)\ket{u}$.
+
+\end{theorem}

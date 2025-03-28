@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{watrous2018theory}
+John Watrous.
+\newblock {\em The theory of quantum information}.
+\newblock Cambridge university press, 2018.
+
+\bibitem{multipartite_spinchains}
+Otfried G{\"u}hne, G{\'e}za T{\'o}th, and Hans~J Briegel.
+\newblock Multipartite entanglement in spin chains.
+\newblock {\em New Journal of Physics}, 7(1):229, 2005.
+
+\bibitem{multipartite_fisher}
+Philipp Hyllus, Wiesław Laskowski, Roland Krischek, Christian Schwemmer, Witlef Wieczorek, Harald Weinfurter, Luca Pezzé, and Augusto Smerzi.
+\newblock Fisher information and multiparticle entanglement.
+\newblock {\em Physical Review A}, 85(2), February 2012.
+
+\end{thebibliography}

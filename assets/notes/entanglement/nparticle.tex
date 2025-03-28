@@ -1,0 +1,45 @@
+\section{$N-$ particle entanglement}
+We now try to formalize a ladder of entanglement between the fully product state $\ket{\psi} = \otimes_{i=1}^n\ket{\phi_i}$, and a state which cannot be written as a product across any partition. This leads to the notion of $k-$producibility \cite{multipartite_spinchains}.
+
+\begin{definition}[$k-$producibility]
+    A pure state $\ket{\psi}\in\H^{\otimes N}$ is said to be $k$ producible if it can be written as 
+    \begin{equation}
+        \ket{\psi} = \ket{\phi_1} \otimes \ket{\phi_2} \otimes \dots \otimes \ket{\phi_M}
+    \end{equation}
+    where each $\phi_m$ is a state on maximally $k$ particles.
+\end{definition}
+Furthermore, we say that a state has genuine $k-$ party entanglement if it is $k-$producible but not $k-1$ producible. We extend this definition to mixed states by calling a mixed state $k-$producible if it can be written as a convex combination of pure $k-$producible states. We denote the convex set of $k-$producible states as $\Prodc_k$, and note that $\Prodc_k \subset \Prodc_{k+1}$. We thus denote $\Ent_k := \Prodc_k / \Prodc_{k-1}$. Then, the set of genuinely $N-$particle entangled states are $\Ent_N$.
+
+
+\begin{lemma}[QFI and $k-$producibility \cite{multipartite_fisher}]
+    For a $k-$producible state $\rho \in D(\H^N)$, the QFI $F[\rho,H]$ for $H = \sum_i h_i$ obeys
+    \begin{equation}
+        F[\rho,H] \leq \lfloor\frac{N}{k}\rfloor k^2 + \left(N - \lfloor\frac{N}{k}\rfloor k\right) \leq k N 
+    \end{equation}
+    Then, $k=O(1)$ implies that $F= O(N)$. Furthermore, $F = \Omega(N^2) \implies k = \Omega(N)$. 
+\end{lemma}
+
+
+For pure states $\ket{\psi}\in\H^N$, one defines the geometric measure of entanglement $E_G$ as 
+\begin{equation}
+    E_G(\psi) := 1- \max_{\ket{\phi}\in\Prodc_1}|\langle \phi|\psi\rangle|^2 
+\end{equation}
+For mixed states, $\rho \in D(\H^N)$, one defines $E_G$ through the convex roof construction 
+\begin{equation}
+    E_G(\rho) = \inf_{\rho = \{p_i,\psi_i\}} \sum_i p_i E_G(\psi_i)
+\end{equation}
+
+
+\begin{definition}[Geometric measure of entanglement]
+    For $\rho \in D(\H^N)$, one has that 
+    \begin{equation}
+        E_G(\rho) = 1- \max_{\sigma\in\Prodc_1}F^2(\rho,\sigma)
+    \end{equation}
+\end{definition}
+
+\begin{lemma}
+    For any $\rho\in D(\H^N)$, one has
+    \begin{equation}
+        1 - \sqrt{1-E_G(\rho)} \leq \min_{\sigma\in\Prodc_1} ||\rho-\sigma||_1 \leq \sqrt{E_G(\rho)}
+    \end{equation}
+\end{lemma}

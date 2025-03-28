@@ -1,0 +1,42 @@
+\section{Introduction}
+A bipartite pure state is entangled (with respect to that partition) iff it cannot be written as a pure state $\ket{\psi} = \ket{\psi_A}\otimes\ket{\psi_B}$. But, one might wish to quantify \textit{how} entangled a state is compared to another. There are carefully designed ways to do this, the simplest of which we talk about now. 
+
+
+The notation of bipartite pure state entanglement is fully captured by the following theorem.
+\begin{theorem}[Schmidt Decomposition]
+    For any bipartite pure state $\ket{\psi} \in \H_A\otimes\H_B$, there exists orthornormal bases $\{\ket{\alpha_i}\}$ and $\{\ket{\beta_i}\}$ of $\mathcal{H}_A$, $\mathcal{H}_B$ respectively, and positive numbers $\lambda_i$ such that 
+    \begin{equation}
+        \ket{\psi} = \sum_{i} \sqrt{\lambda_i} \ket{\alpha_i} \otimes \ket{\beta_i}
+    \end{equation}
+    such that $\sum_i\lambda_i = 1$.
+\end{theorem}
+The values $\{\lambda_i\}$ comprise the Schmidt spectrum of $\ket{\psi}$, and characterize everything about the entanglement at that bipartition. Intuitively, if the distribution $\lambda_i$ is `well spread out,' then the entropy is high. This is quantified by the following entropic measures.
+
+\begin{definition}[Renyi Entropies]
+    For any distribution $p = \{p_i\}_i \in \mathcal{P}_n$, one defines for all $\alpha \geq 0$, $\alpha \neq 0$
+    \begin{equation}
+        H_\alpha(p) := \frac{1}{1-\alpha}\log\left(\sum_{i\in[n]}p_i^\alpha\right)
+    \end{equation}
+    For $\alpha = 1$, we define 
+    \begin{eqnarray}
+        H_1(p) \equiv H(p) := -\sum_{i\in[n]}p_i \log{p_i}
+    \end{eqnarray}
+\end{definition}
+The $\alpha$-\textit{entanglement entropy} of a state $\ket{\psi} \in \H_A\otimes\H_B$ is $H_\alpha(\lambda)$, where $\lambda \equiv \{\lambda_i\}$ is the Schmidt spectrum of $\psi$.
+
+
+The notion of entanglement across a bipartition is naturally then extended to mixed states.
+\begin{definition}[Bipartite Separability]
+    A state $\rho \in D(\H_A \otimes \H_B)$ is said to be separable if 
+    \begin{equation}
+        \rho = \sum_{i}p_i \rho^A_i \otimes \rho^B_i
+    \end{equation}
+    The set of separable states in $D(\H_A \otimes \H_B)$ is denoted $\Sep(\H_A \otimes \H_B)$.
+\end{definition}
+A bipartite state is said to be entanglement iff it is not separable. Also, the set $\Sep(\H_A\otimes\H_B)$ is convex, as expected. Moreover, separability implied `classicality' of the correlations, as shown by the following lemma.
+\begin{lemma}[Prop.~6.6 of \cite{watrous2018theory}]
+    Every separable state $\rho \in \Sep(\H_A \otimes \H_B)$ there exist $\{p_i\}_i$ and $\ket{\psi_{A(B)}}_i \in \H_{A(B)}$ for $i \in [\text{rank}(\rho)^2]$ such that
+    \begin{eqnarray}
+        \rho = \sum_{i}p_i \ket{\psi_{A}} \bra{\psi_{A}}_i \otimes \ket{\psi_{B}}\bra{\psi_{B}}_i 
+    \end{eqnarray}
+\end{lemma}
