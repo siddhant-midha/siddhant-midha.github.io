@@ -27,10 +27,11 @@ Previously, I studied electrical engineering, physics, and just a bit of CS at I
 
 I am interested in studying the dynamics of quantum information, and quantum technology in general.
 
+
 I find myself fascinated by problems at the interface of quantum info, condensed matter, and quantum optics. I also like thinking about machine learning, and complexity theory sometimes.
 
 
+If you are an IITB student, the material on the [teaching](https://siddhantmidha.com/teaching/) page might be useful. If you are a person interested in learning more about quantum information, [this](https://github.com/VedangAsgaonkar/Quantum-Machine-Learning-SoC2022?tab=readme-ov-file) may be useful. I'm always happy to respond to emails, feel free to reach out!
 
-_Note for undergrads interested in quantum research_. It is usually a good idea to reach out to graduate students working on things you're interested in, and potentially gain some research experience by collaborating with them. Grad students have more ideas than time on their hands --- if you are numerically proficient and/or theoretically advanced, reach out to discuss ideas! 
 
 <a href="https://info.flagcounter.com/UvsF"><img src="https://s11.flagcounter.com/count2/UvsF/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
