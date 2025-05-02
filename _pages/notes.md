@@ -21,3 +21,4 @@ horizontal: false
 ## Talks
 
 - [Intro to QIC](https://siddhant-midha.github.io/assets/notes/qi_slides/tsc.pdf)
+- [Markov Length in Quantum Many-Body Systems](https://siddhant-midha.github.io/assets/notes/markovlength.pdf)
