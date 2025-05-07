@@ -16,6 +16,7 @@ horizontal: false
 - [Non-Hermitian Topology](https://siddhant-midha.github.io/assets/pdf/project_pdf/nh_top/NH_Topology_paper.pdf), also [slides](https://siddhant-midha.github.io/assets/pdf/project_pdf/nh_top/NH_Topology_slides.pdf).
 - [Abstract Algebra](https://siddhant-midha.github.io/assets/pdf/project_pdf/sos21/sos21_report.pdf)
 - [Quantum spin chains and topology](https://siddhant-midha.github.io/assets/pdf/project_pdf/asm_proj/asm_proj_report.pdf)
+- [Quantum Pseudorandomness](https://siddhant-midha.github.io/assets/notes/PRQ.pdf)
 
 
 ## Talks
