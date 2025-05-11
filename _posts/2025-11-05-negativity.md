@@ -50,7 +50,7 @@ _styles: >
 
 ## Setting 
 
-We are interested in quantum systems defined on a system $$S = A \cup B$$, and quantifying the entanglement between the A and B subsystems. Let $$\mathcal{H}_X$$ denote the Hilbert space of register $$X$$, so $$\mathcal{H}_S = \mathcal{H}_A \otimes \mathcal{H}_B$$. A quantum state on $$X$$ is a unit-trace positive operator $$\rho\in \mathcal{D}(\mathcal{H}_X)$$. A state is pure if it is rank-one, $$\rho = |\psi\rangle \langle \psi|$$. Owing to the annoyance caused by writing kets and bras without the ``physics`` package, I will just write $$\psi$$ to denote the density matrix of a pure state.
+We are interested in quantum systems defined on a system $$S = A \cup B$$, and quantifying the entanglement between the A and B subsystems. Let $$\mathcal{H}_X$$ denote the Hilbert space of register $$X$$, so $$\mathcal{H}_S = \mathcal{H}_A \otimes \mathcal{H}_B$$. A quantum state on $$X$$ is a unit-trace positive operator $$\rho\in \mathcal{D}(\mathcal{H}_X)$$. A state is pure iff it is rank-one. Owing to the annoyance caused by writing kets and bras without the `physics` package, I will just write $$\psi$$ to denote the density matrix of a pure state.
 
 Let us first set the ground and talk about the simpler case. For _pure_ states, the notion of entanglement is very well defined and well captured by von-Neumann entropy. Specifically, if I define the reduced state of A as $$\rho_A = tr_B(\psi)$$, then the entropy $$S(\rho_A) = -tr(\rho_A \log{\rho_A})$$ captures the amount of entanglement in the bipartition $$A \cup B$$. This is often called the entropy of entanglement. Operationally, in the limit of a large number of copies of the state, this quantity quantifies 
 
@@ -97,7 +97,7 @@ We then perform the following task. Take the state $$\rho_{AB}$$, partial transp
 If this quantity is positive, we have entanglement. This is called _negativity_. A nicer way to write this down is,
 
 \begin{equation}
-\mathcal{N}(\rho_{AB}) := \frac{\|\rho_{AB}^{T_A}\|_1 - 1}{2}
+\mathcal{N}(\rho_{AB}) := \frac{||\rho_{AB}^{T_A}||_1 - 1}{2}
 \end{equation}
 
 
