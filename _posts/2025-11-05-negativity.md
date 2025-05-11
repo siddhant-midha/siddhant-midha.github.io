@@ -87,23 +87,44 @@ If a state does not pass PPT, we denote it to be NPT. Then, we can say that a st
 \text{NPT} \implies \text{Entangled}
 \end{equation}
 
+It is good to note a stronger statements proven for $$2 \otimes 2$$ and $$2 \otimes 3$$. In [2], the $$\text{Horodecki}^{\otimes 3}$$ proved that for these dimensions, PPT and separability are equivalent. 
+
+\begin{equation}
+(2 \otimes 2) \text{ and } (2 \otimes 3) :  \text{PPT} \Leftrightarrow \text{Separable}
+\end{equation}
+
+
 ## Negativity
+
 We then perform the following task. Take the state $$\rho_{AB}$$, partial transpose it $$\rho_{AB}^{T_A}$$, and find it's spectrum $$\Lambda(\rho_{AB}^{T_A}) = \{\lambda_i\}_i$$. Then, define,
 
 \begin{equation}
 \mathcal{N}(\rho_{AB}) := \sum_{\lambda_i : \lambda_i < 0} |\lambda_i|
 \end{equation}
 
-If this quantity is positive, we have entanglement. This is called _negativity_. A nicer way to write this down is,
+If this quantity is positive, we have entanglement. This is called _negativity_. That is $$\mathcal{N}(\rho_{AB}) = 0$$ for separable states. A nicer way to write this down is,
 
 \begin{equation}
 \mathcal{N}(\rho_{AB}) := \frac{||\rho_{AB}^{T_A}||_1 - 1}{2}
 \end{equation}
 
+where $$\|O\|_1 := tr\sqrt{O^{\dagger}O}$$ is the trace norm. Another quantity born out of this discussion is the _logarithmic negativity_, 
 
-where $$\|O\|_1 := tr\sqrt{O^{\dagger}O}$$ is the trace norm. 
+\begin{equation}
+    E_N(\rho_{AB}) := \log_2||\rho_{AB}^{T_A}||_1 \equiv \log_2(2\mathcal{N}(\rho_{AB}) + 1)
+\end{equation}
+
+These quantities first showed up in [4], and are now commonly used in analyzing mixed state entanglement.
+
+
+## Distillable entanglement
 
 ## References
 
 [1] Peres, Asher. "Separability criterion for density matrices." Physical Review Letters 77.8 (1996): 1413.
-[2] Horodecki, Michał, Paweł Horodecki, and Ryszard Horodecki. "Separability of n-particle mixed states: necessary and sufficient conditions in terms of linear maps." Physics Letters A 283.1-2 (2001): 1-7.
+
+[2] Horodecki, Michal, Pawel Horodecki, and Ryszard Horodecki. "On the necessary and sufficient conditions for separability of mixed quantum states." Phys. Lett. A 223.1 (1996).
+
+[3] Horodecki, Michał, Paweł Horodecki, and Ryszard Horodecki. "Mixed-state entanglement and distillation: Is there a “bound” entanglement in nature?." Physical Review Letters 80.24 (1998): 5239.
+
+[4] Vidal, Guifré, and Reinhard F. Werner. "Computable measure of entanglement." Physical Review A 65.3 (2002): 032314.
