@@ -2,7 +2,7 @@
 layout: distill
 title: Entanglement Negativity
 description: 
-tags: etna
+tags: qi
 giscus_comments: true
 date: 2025-05-11
 featured: true
