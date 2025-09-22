@@ -11,7 +11,11 @@ horizontal: false
 
 Here, you can find the course pages for all the stuff I've taught.
 
-## At IIT Bombay 
+## Princeton University
+
+1. _COS 585: Information Theory_. 
+
+## IIT Bombay 
 
 1. _MA 109: Calculus I_. [AY22](https://siddhantmidha.com/teaching/ma109-22/)
 2. _MA 111: Calculus II_. [AY21](https://siddhantmidha.com/teaching/ma-111-21/), [AY22](https://siddhantmidha.com/teaching/ma-111-22/)
