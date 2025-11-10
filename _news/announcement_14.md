@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Posted the paper on [continuous metrology with MPS methods](https://arxiv.org/abs/2504.13815)!
+[Continuous metrology with MPS methods](https://arxiv.org/abs/2504.13815) will [appear](https://apps.crossref.org/pendingpub/pendingpub.html?doi=10.1103%2Fgkdm-h2wx) as a Letter in Phys. Rev. A.
