@@ -1,7 +1,7 @@
 ---
 layout: page
-title: reading group
-permalink: /reading-group/
+title: many-body reading group
+permalink: /many-body-reading-group/
 description: Princeton Quantum Many-Body Reading Group
 nav: false
 sitemap: false # unlisted: reachable only via the direct link
