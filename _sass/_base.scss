@@ -34,6 +34,21 @@ table {
   }
 }
 
+// Bootstrap's .table hardcodes a light-mode text colour and border, which leaves
+// content tables unreadable in dark mode. Follow the theme variables instead.
+table.table {
+  color: var(--global-text-color);
+
+  th,
+  td {
+    border-top-color: var(--global-divider-color);
+  }
+
+  thead th {
+    border-bottom-color: var(--global-divider-color);
+  }
+}
+
 a,
 table.table a {
   color: var(--global-theme-color);
