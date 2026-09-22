@@ -90,10 +90,16 @@ python3 bin/sync-publications.py --dry-run --verbose   # report only
 python3 bin/sync-publications.py                       # write papers.bib
 ```
 
-`.github/workflows/sync-publications.yml` runs it weekly and opens a PR when
-something changed; `deploy.yml` builds that PR, so a green check means the
-bibliography still parses. New entries need a `preview={...}` image added by hand
-in `assets/img/publication_preview/` — the script's report lists which.
+`.github/workflows/sync-publications.yml` runs it weekly and **commits straight to
+`master`** when something changed. Because a push authenticated with `GITHUB_TOKEN`
+deliberately does not trigger other workflows, that commit would never fire
+`deploy.yml` on its own — so the workflow dispatches `deploy.yml` explicitly
+afterwards. Without that step the bibliography would update in the repo while the
+live site silently stayed stale.
+
+New entries land without a `preview={...}` image; the script's report names them,
+and the workflow repeats it in the run summary. Add the image to
+`assets/img/publication_preview/` and the field to the entry by hand.
 
 Records on the upstream profiles with neither an arXiv ID nor a DOI cannot be
 resolved and are reported as `SKIP` on stderr. Mis-attributed papers go in the
