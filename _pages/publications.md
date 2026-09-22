@@ -13,4 +13,11 @@ nav_order: 2
 
 </div>
 
+<p class="text-muted mt-4"><small>
+  Preview image for <em>Sharp Bounds on Ground State Energy of the SYK Model</em>:
+  <a href="https://commons.wikimedia.org/wiki/File:ESD_of_normalized_Gaussian_matrix_size_1500x1500.png">ESD
+  of normalized Gaussian matrix size 1500x1500</a> by Itamer9, via Wikimedia Commons,
+  <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.
+</small></p>
+
 

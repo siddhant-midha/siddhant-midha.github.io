@@ -1,0 +1,56 @@
+name: sync publications
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The script is stdlib-only, so there is nothing to install.
+      - name: Sync papers.bib 📚
+        id: sync
+        run: |
+          python3 bin/sync-publications.py --verbose | tee /tmp/report.txt
+          {
+            echo 'report<<REPORT'
+            cat /tmp/report.txt
+            echo REPORT
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request 🚀
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/sync-publications
+          delete-branch: true
+          add-paths: _bibliography/papers.bib
+          commit-message: "chore: sync papers.bib with ORCID + Semantic Scholar"
+          title: "Sync publications"
+          body: |
+            Automated run of `bin/sync-publications.py`.
+
+            ```
+            ${{ steps.sync.outputs.report }}
+            ```
+
+            Curated fields (`preview`, `abbr`, `selected`, ...) and citation keys are
+            preserved by the merge. Before merging, check that any **new** entry has a
+            `preview={...}` image in `assets/img/publication_preview/` — the report lists
+            the ones that need it.
+
+            The `deploy` workflow builds this PR, so a green check means the bibliography
+            still parses.
