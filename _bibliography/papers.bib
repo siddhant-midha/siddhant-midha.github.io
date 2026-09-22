@@ -1,3 +1,38 @@
+@misc{midha2026algorithmiclocalityvia,
+  title         = {Algorithmic Locality via Provable Convergence in Quantum Tensor Networks},
+  author        = {Siddhant Midha and Yifan F. Zhang and Daniel Malz and Dmitry A. Abanin and Sarang Gopalakrishnan},
+  year          = {2026},
+  eprint        = {2604.21919},
+  archiveprefix = {arXiv},
+  primaryclass  = {quant-ph},
+  url           = {https://arxiv.org/abs/2604.21919},
+  preview       = {alg_locality.png},
+  abstract      = {Belief propagation has recently emerged as a powerful framework for evaluating tensor networks in higher dimensions, combining computational efficiency with provable analytical guarantees. In this work, we develop the first end-to-end theory of tensor network belief propagation for a class of projected entangled pair states satisfying \emph{strong injectivity}. We show that when the injectivity parameter exceeds a constant threshold, BP fixed points can be found efficiently, and a cluster-corrected BP algorithm computes physical quantities to $1/\mathrm{poly}(N)$ error in $\mathrm{poly}(N)$ time for an $N$ qubit system. We identify a striking phenomenon we term \emph{algorithmic locality}: local perturbations of the tensor network affect the BP fixed point with an influence decaying rapidly with distance. As a result, updates to the fixed point after a local perturbation can be carried out using only local recomputation. Moreover, through the cluster expansion, this locality extends to observables, implying that local expectation values can be approximated from local data with controlled accuracy. Our results provide the first rigorous guarantee for the effectiveness of tensor-network belief propagation on a wide class of many-body states, bridging a gap between widely used numerical practice and provable algorithmic performance.},
+}
+
+@misc{basu2026sharpboundsground,
+  title         = {Sharp Bounds on Ground State Energy of the SYK Model},
+  author        = {Arpon Basu and Pravesh K. Kothari and Siddhant Midha},
+  year          = {2026},
+  eprint        = {2607.27185},
+  archiveprefix = {arXiv},
+  primaryclass  = {quant-ph},
+  url           = {https://arxiv.org/abs/2607.27185},
+  preview       = {wigner_semicircle.png},
+  abstract      = {We study the Sachdev-Ye-Kitaev (SYK) Hamiltonian $H_{\operatorname{SYK}}$ on $n$ Majorana modes with $k$-body interactions, and prove that $\mathbb{E}\|H_{\operatorname{SYK}}\|_{\operatorname{op}} = (1 - o(1))\cdot\sqrt{2n}/k$ for super-constant $k\leq o(\sqrt{n})$, where the expectation is over the disorder variables in the Hamiltonian. This confirms the predictions due to Garcia-Garcia, Jia and Verbaarschot'18 and answers a question posed in Feng, Tian and Wei'19. Our results extend to the sparse SYK Hamiltonian. As a corollary, we obtain that the dissipative quantum algorithm of Basso, Chen and Dalzell'24 provably computes the ground state energy of the SYK Hamiltonian up to an $O(1)$-multiplicative factor for all $k<\sqrt{n}/4$. Our key technical idea is identifying an explicit, deterministic linear operator $\mathsf{x}$ such that a fixed quadratic form of $\mathsf{x}^{2\ell}$ exactly equals the expected trace moments of the SYK Hamiltonian for every $n$ and $k$. This linear operator can be naturally viewed as a \emph{twisted} model of bosons on the space of hyperedges of a hypergraph. The problem thus reduces to identifying the spectral edge of $\mathsf{x}$, which we show is dominated by the spectrum of a natural ${n \choose k}$-dimensional matrix from the \emph{Johnson} scheme and is straightforward to compute using known results. To show that our bound is sharp, we construct a witness state with a large quadratic form on $\mathsf{x}$ and transform it into a certificate of a lower bound on the largest quadratic form on $H_{\operatorname{SYK}}$.},
+}
+
+@misc{midha2026beliefpropagationtensor,
+  title         = {Belief Propagation and Tensor Network Expansions for Many-Body Quantum Systems: Rigorous Results and Fundamental Limits},
+  author        = {Siddhant Midha and Grace M. Sommers and Joseph Tindall and Dmitry A. Abanin},
+  year          = {2026},
+  eprint        = {2604.03228},
+  archiveprefix = {arXiv},
+  primaryclass  = {quant-ph},
+  url           = {https://arxiv.org/abs/2604.03228},
+  preview       = {BP_expansion.png},
+  abstract      = {Belief propagation (BP) provides a scalable heuristic for contracting tensor networks on loopy graphs, but its success in quantum many-body settings has largely rested on empirical evidence. Developing upon a recently introduced cluster-expansion framework for tensor networks, we rigorously study the applicability of BP to many-body quantum systems. For a state represented as a PEPS satisfying a ``loop-decay"condition, we prove that BP supplemented by cluster corrections approximates local observables with exponentially small relative error, and we give explicit formulas expressing local expectation values as BP predictions dressed by connected clusters intersecting the observable region. This representation establishes a direct link between cluster corrections and physical correlation functions. As a result, we show that ``loop-decay"\emph{necessarily implies} exponential decay of connected correlations, yielding sharp, rigorous criteria for when BP can and cannot succeed, and ruling out its validity at critical points. Numerical simulations of the two- and three-dimensional transverse field Ising model at zero and finite temperature confirm our analytical predictions, demonstrating quantitative accuracy deep in gapped phases and systematic failure near criticality.},
+}
 
 @article{arora_steady-state_2025,
   title = {Steady-state dynamics and nonlocal correlations in thermoelectric {Cooper} pair splitters},
@@ -57,20 +92,6 @@
   preview={bayesian.png}
 }
 
-@misc{atallah_integer_2023,
-  title = {Integer {Factorization} through {Func}-{QAOA}},
-  url = {http://arxiv.org/abs/2309.15162},
-  doi = {10.48550/arXiv.2309.15162},
-  abstract = {Integer factorization is a significant problem, with implications for the security of widely-used cryptographic schemes. No efficient classical algorithm for polynomial-time integer factorization has been found despite extensive research. Although Peter Shor's breakthrough quantum algorithm offers a viable solution, current limitations of noisy intermediate-scale quantum (NISQ) computers hinder its practical implementation. To address this, researchers have explored alternative methods for factorization suitable for NISQ devices. One such method is the Quantum Approximate Optimization Algorithm, which treats factoring as an optimization problem defined over binary bits, resulting in various problematic aspects. In this paper, we explore the Func-QAOA approach for factorization, which premises overcoming some of the limitations of previous approaches and allows the incorporation of more advanced factorization techniques. After reviewing the most promising quantum implementations for integer arithmetics, we present a few illustrative examples to demonstrate the efficacy of the Func-QAOA approach and discuss methods to reduce the search space to speed up the optimization process.},
-  urldate = {2025-03-28},
-  publisher = {arXiv},
-  author = {Atallah, Mostafa and Velmurugan, Haemanth and Sharma, Rohan and Midha, Siddhant and Mamun, Shamim Al and Botelho, Ludmila and Glos, Adam and Salehi, Özlem},
-  month = sep,
-  year = {2023},
-  note = {arXiv:2309.15162 [quant-ph]},
-  keywords = {Quantum Physics},
-}
-
 @misc{midha_microscopics_2024,
   title = {On the microscopics of proximity effects in one-dimensional superconducting hybrid systems},
   url = {http://arxiv.org/abs/2411.12733},
@@ -86,22 +107,32 @@
   preview={induced.png}
 }
 
-@misc{midha2025metrologyopenquantumsystems,
-      title={Metrology of open quantum systems from emitted radiation}, 
-      author={Siddhant Midha and Sarang Gopalakrishnan},
-      year={2025},
-      eprint={2504.13815},
-      archivePrefix={arXiv},
-      primaryClass={quant-ph},
-      url={https://arxiv.org/abs/2504.13815}, 
-      preview={QFI_MPS.png}
+@article{midha2025metrologyopenquantumsystems,
+  title     = {Metrology of open quantum systems from emitted radiation},
+  author    = {Midha, Siddhant and Gopalakrishnan, Sarang},
+  year      = {2025},
+  url       = {https://doi.org/10.1103/gkdm-h2wx},
+  preview   = {QFI_MPS.png},
+  volume    = {112},
+  issn      = {2469-9934},
+  doi       = {10.1103/gkdm-h2wx},
+  number    = {6},
+  journal   = {Physical Review A},
+  publisher = {American Physical Society (APS)},
+  month     = dec,
 }
 
 @article{midha2025beyond,
-  title={Beyond Belief Propagation: Cluster-Corrected Tensor Network Contraction with Exponential Convergence},
-  author={Midha, Siddhant and Zhang, Yifan F},
-  journal={arXiv preprint arXiv:2510.02290},
-  url={https://arxiv.org/abs/2510.02290},
-  year={2025}, 
-  preview={BP.png}
+  title     = {Beyond Belief Propagation: Cluster-Corrected Tensor Network Contraction with Exponential Convergence},
+  author    = {Midha, Siddhant and Zhang, Yifan F.},
+  journal   = {PRX Quantum},
+  url       = {https://doi.org/10.1103/sdlx-d3tn},
+  year      = {2026},
+  preview   = {BP.png},
+  volume    = {7},
+  issn      = {2691-3399},
+  doi       = {10.1103/sdlx-d3tn},
+  number    = {3},
+  publisher = {American Physical Society (APS)},
+  month     = jul,
 }
