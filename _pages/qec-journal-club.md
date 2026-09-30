@@ -37,8 +37,8 @@ a paper exhaustively.
 
 ## Joining
 
-Open to anyone with an interest in the topic — no need to be working on it. For the
-Zoom link, to volunteer for a slot, or to propose a paper you would like read,
-<a href="mailto:{{ site.email | encode_email }}">email me</a>.
+Open to anyone with an interest in the topic — no need to be working on it. To join
+the mailing list, to volunteer for a slot, or to propose a paper you would like
+read, <a href="mailto:{{ site.email | encode_email }}">email me</a>.
 
 Proposals are welcome whether or not you want to present them yourself.
