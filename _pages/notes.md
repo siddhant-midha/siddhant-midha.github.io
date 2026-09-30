@@ -4,7 +4,7 @@ title: notes
 permalink: /notes/
 description: notes 
 nav: true
-nav_order: 1
+nav_order: 3
 display_categories:  
 horizontal: false
 ---

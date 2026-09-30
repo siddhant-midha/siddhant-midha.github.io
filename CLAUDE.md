@@ -60,7 +60,13 @@ usually the whole change.
   within a group. Note `_pages/teaching.md` currently hand-writes its course list
   with absolute links rather than using the collection's card rendering.
 - `_pages/*.md` — top-level pages. `nav: true` plus `nav_order` controls the
-  navbar; `_pages/dropdown.md` defines a submenu via its `children` list.
+  navbar; `_pages/dropdown.md` defines a submenu via its `children` list. The
+  navbar is deliberately just **about / publications / teaching / notes**; `cv`,
+  the submenu, and the two group pages carry `nav: false` but remain reachable at
+  their permalinks. The blog link was removed from `_includes/header.html` rather
+  than by blanking `blog_nav_title`, because that variable also feeds the blog
+  index's `<title>` in `_includes/metadata.html` and blanking it leaves a stray
+  leading `" | "`. `/blog/` still works.
 - `_bibliography/papers.bib` — publications, rendered by jekyll-scholar on
   `/publications/`. Custom bib fields (`abbr`, `arxiv`, `html`, `pdf`, `selected`,
   `preview`, `bibtex_show`, …) are consumed by `_layouts/bib.html` and stripped

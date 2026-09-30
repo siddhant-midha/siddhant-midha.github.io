@@ -4,7 +4,7 @@ title: teaching
 permalink: /teaching/
 description: courses I have taught/assisted in.
 nav: true
-nav_order: 3
+nav_order: 2
 display_categories:  
 horizontal: false
 ---
@@ -14,6 +14,7 @@ Here, you can find the course pages for all the stuff I've taught.
 ## Princeton University
 
 1. _COS 585: Information Theory_. 
+2. _PHY 506: Advanced Quantum Mechanics_. 
 
 ## IIT Bombay 
 
