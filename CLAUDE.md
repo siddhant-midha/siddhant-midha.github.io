@@ -73,8 +73,15 @@ usually the whole change.
   from displayed BibTeX by `_plugins/hideCustomBibtex.rb`. `selected={true}`
   promotes a paper to the about page (currently disabled there). **Do not
   regenerate this file** — see below.
-- `_data/` — `cv.yml` (feeds `/cv/`, alongside `assets/json/resume.json` pulled in
-  by jekyll-get-json), `repositories.yml`, `coauthors.yml`, `venues.yml`.
+- `_data/` — `cv.yml` is the **single** source for `/cv/`; plus `repositories.yml`,
+  `coauthors.yml`, `venues.yml`. Upstream al-folio can also render the CV from a
+  JSON Resume file via `site.data.resume`, and that source *took priority* over
+  `cv.yml` whenever it loaded — so a stray `_data/resume.*` would silently swap the
+  page's contents. That whole path is gone: the broken `assets/json/resume.json`,
+  the `jekyll-get-json` plugin (removed from both `_config.yml` and the `Gemfile`,
+  since gems in the `:jekyll_plugins` group load regardless of the plugins list),
+  and the dead branch in `_layouts/cv.html`. `_includes/resume/` is now unused.
+  `cv_pdf:` in `_pages/cv.md` resolves against `assets/pdf/`.
 
 ## Publication sync
 
@@ -119,7 +126,14 @@ script's `IGNORE` set.
 ## Assets and PDFs
 
 Written notes/talks live as compiled PDFs under `assets/pdf/`, `assets/notes/`,
-and LaTeX sources under `assets/TeX/`. `_pages/notes.md` links to them by absolute
+and LaTeX sources under `assets/TeX/`.
+
+**`assets/TeX/cv`, `magic`, `oqs` and `qinotes` are Overleaf clones — nested git
+repositories, and gitignored.** Never `git add` them; that would embed a repo
+inside this one. Publish only the built PDF, copied out: `bin/update-cv.sh` does
+this for the CV (`assets/TeX/cv/main.pdf` → `assets/pdf/cv.pdf`). Other
+directories under `assets/TeX/` are ordinary folders whose PDFs may be committed
+in place, as `qic_intro` is. `_pages/notes.md` links to them by absolute
 URL. Keep source and built PDF together, and check the link actually resolves —
 the page mixes `siddhantmidha.com`, `siddhant-midha.github.io`, and at least one
 malformed `assets/assets/...` path.
