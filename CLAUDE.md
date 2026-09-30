@@ -107,6 +107,11 @@ New entries land without a `preview={...}` image; the script's report names them
 and the workflow repeats it in the run summary. Add the image to
 `assets/img/publication_preview/` and the field to the entry by hand.
 
+The `Abs` button in `_layouts/bib.html` renders only when an entry has an
+`abstract` field. Crossref does not supply one, so the script backfills abstracts
+from Semantic Scholar for any entry missing one — otherwise a preprint upgraded to
+a journal article would silently lose its button.
+
 Records on the upstream profiles with neither an arXiv ID nor a DOI cannot be
 resolved and are reported as `SKIP` on stderr. Mis-attributed papers go in the
 script's `IGNORE` set.

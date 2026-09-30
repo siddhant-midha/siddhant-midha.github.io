@@ -451,12 +451,22 @@ def main():
             print(f"  NEW      {paper['arxiv'] or paper['doi']}  {paper['title'][:58]}")
             continue
 
+        # Backfill an abstract the entry never had. _layouts/bib.html only renders
+        # the "Abs" button when the field is present, and Crossref supplies no
+        # abstract -- so a preprint upgraded to a journal article would otherwise
+        # lose its abstract button permanently.
+        if paper["abstract"] and not match.get("abstract"):
+            match.set("abstract", clean_abstract(paper["abstract"]))
+            if match.key not in updated:
+                updated.append(match.key)
+            print(f"  ABSTRACT {match.key}  (was missing)")
+
         if paper["doi"] and is_preprint(match):
             fetched = upstream_bibtex(paper)
             if fetched is None:
                 continue
             changed = upgrade(match, fetched)
-            if changed:
+            if changed and match.key not in updated:
                 updated.append(match.key)
                 venue = match.get("journal") or match.get("booktitle") or paper["doi"]
                 print(f"  UPDATED  {match.key}  ->  {venue}")
