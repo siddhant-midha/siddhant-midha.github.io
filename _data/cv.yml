@@ -1,10 +1,10 @@
 - title: General Information
   type: map
   contents:
-    - name: Full Name
-      value: Siddhant Midha
-    - name: Languages
-      value: English, Hindi
+    - name: Name
+      value: Siddhant (Sid) Midha
+    # - name: Languages
+    #   value: English, Hindi
 
 - title: Education
   type: time_table
@@ -22,45 +22,38 @@
         - Electrical Engineering,
         - With Honors.
         - Minor in Physics. 
-        - Research advisors. Prof. Bhaskaran Muralidharan, Prof. Kasturi Saha, Prof. Sai Vinjanampathy
 - title: Experience
   type: time_table
   contents:
-    - title: Research Intern
+    - title: DAAD-WISE Fellow
       institution: Technical University of Munich & The Max Planck Institute for Quantum Optics
       year: 2023
-      description:
-        - Advisor. Prof. Andreas Reiserer
-        - Project. Optical resonator design for quantum transduction.
-    - title: Research Intern
-      institution: QIntern
-      year: 2022
-      description:
-        - Advisors. Dr. Adam Glos and Dr. Ozlem Salehi
-        - Project. Integer factorization using functional QAOA
-
-    - title: Research Assistant
+      # description:
+      #   - Advisor. Prof. Andreas Reiserer
+      #   - Project. Optical resonator design for quantum transduction.
+    - title: Aalto Science Fellow 
       institution: Aalto University
       year: 2022
-      description:
-        - Advisor. Prof. Vikas Garg
-        - Project. Generative quantum machine learning
+      # description:
+      #   - Advisor. Prof. Vikas Garg
+      #   - Project. Generative quantum machine learning
         
 - title: Research Interests
   type: nested_list
   contents:
-    - title: Quantum Information Theory
+    - title: Quantum Many Body Physics 
       items: 
-        - Entanglement theory.
-        - Quantum many-body physics.
-        - Quantum error correction.
-    - title: Condensed Matter Physics
+        - Quantum simulation
+        - Tensor Networks 
+        - Complexity of quantum systems
+        - AI for quantum systems 
+    - title: Quantum Error Correction 
       items:
-        - Non-equilibrium Green's functions.
-        - Entanglement in the solid-state.
-        - Hybrid superconducting structures.
-    - title: Quantum Optics
+        - Belief Propagation 
+        - Efficient decoding algorithms 
+        - Real-time autonomous decoders  
+    - title: Others
       items:
-        - Open quantum systems.
-        - Continuous measurements.
-        - Quantum trajectories.
+        - Quantum metrology 
+        - Open quantum systems 
+        - Quantum entanglement

@@ -12,3 +12,10 @@ vendor
 
 # python bytecode from bin/ scripts
 __pycache__/
+
+# Overleaf clones: nested git repositories. Never add these to this repo --
+# publish the built PDF by copying it out (see bin/update-cv.sh).
+assets/TeX/cv/
+assets/TeX/magic/
+assets/TeX/oqs/
+assets/TeX/qinotes/
