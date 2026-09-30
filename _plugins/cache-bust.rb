@@ -19,9 +19,16 @@ module Jekyll
 
             private
 
+            # Sorted so the digest does not depend on filesystem ordering, and
+            # accepting several directories so main.css is busted by a change to
+            # either the partials or the entry point that imports them.
             def directory_files_content
-                target_path = File.join(directory, '**', '*')
-                Dir[target_path].map{|f| File.read(f) unless File.directory?(f) }.join
+                Array(directory)
+                    .flat_map { |dir| Dir[File.join(dir, '**', '*')] }
+                    .reject { |f| File.directory?(f) }
+                    .sort
+                    .map { |f| File.read(f) }
+                    .join
             end
 
             def file_content
@@ -42,8 +49,12 @@ module Jekyll
             CacheDigester.new(file_name: file_name, directory: nil).digest!
         end
 
+        # main.css is built from assets/css/main.scss, which imports _sass/*.
+        # This pointed at 'assets/_sass', which does not exist, so the glob matched
+        # nothing and every build emitted MD5("") -- the query string never changed
+        # and browsers served a stale stylesheet indefinitely.
         def bust_css_cache(file_name)
-            CacheDigester.new(file_name: file_name, directory: 'assets/_sass').digest!
+            CacheDigester.new(file_name: file_name, directory: ['_sass', 'assets/css']).digest!
         end
     end
 end
