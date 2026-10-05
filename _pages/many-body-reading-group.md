@@ -21,7 +21,7 @@ This group is centered around the theme "beyond-1D and high temperature," explor
 | Date | Topic | Presenter | Resources |
 | :--- | :--- | :--- | :--- |
 | Oct 1, 2026 | Lee-Yang Theory | Arpon Basu | — |
-| Oct 8, 2026 | TBD | TBD | — |
+| Oct 8, 2026 | Replica Theory | Siddhant Midha | — |
 | Oct 15, 2026 | TBD | TBD | — |
 | Oct 22, 2026 | TBD | TBD | — |
 {: .table}
