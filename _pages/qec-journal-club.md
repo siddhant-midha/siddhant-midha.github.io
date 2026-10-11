@@ -9,19 +9,7 @@ sitemap: false # unlisted: reachable only via the direct link
 
 A journal club on **recent developments and research in quantum error correction.**
 
-We follow the current literature — code constructions, decoders, fault-tolerant
-gadgets, and what any of it costs on real hardware — with an emphasis on work that
-has appeared recently enough that the community has not yet settled on what it
-means.
-
 **Spacetime coordinates** Tuesdays, 3:00 – 4:30 pm · Jadwin 111
-
-## Presenting
-
-Prepare roughly 45 minutes, accessible to someone who knows stabilizer codes but
-does not work on the specific construction, leaving the rest of the slot for
-discussion. The aim is to seed discussion and surface open questions — not to cover
-a paper exhaustively.
 
 ## Schedule
 
@@ -34,11 +22,3 @@ a paper exhaustively.
 | Oct 6, 2026 | 3:00 – 4:30 pm | The polynomial formalism | Nick O'Dea | — |
 | Oct 13, 2026 | 3:00 – 4:30 pm | Haah's code | Nick O'Dea | — |
 {: .table}
-
-## Joining
-
-Open to anyone with an interest in the topic — no need to be working on it. To join
-the mailing list, to volunteer for a slot, or to propose a paper you would like
-read, <a href="mailto:{{ site.email | encode_email }}">email me</a>.
-
-Proposals are welcome whether or not you want to present them yourself.
