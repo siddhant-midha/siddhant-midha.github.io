@@ -32,7 +32,7 @@ a paper exhaustively.
 | Sep 8, 2026 | 3:00 – 4:00 pm | qLDPC lattice surgery | Frank Zhang | — |
 | Sep 22, 2026 | 3:00 – 4:00 pm | Quantum LDPC codes with design rate 1/5 and good performance below 1000 physical qubits | Yifan Hong | [arXiv:2607.27644](https://arxiv.org/abs/2607.27644) |
 | Oct 6, 2026 | 3:00 – 4:30 pm | The polynomial formalism | Nick O'Dea | — |
-| Oct 13, 2026 | 3:00 – 4:30 pm | TBD | Nick O'Dea | — |
+| Oct 13, 2026 | 3:00 – 4:30 pm | Haah's code | Nick O'Dea | — |
 {: .table}
 
 ## Joining
