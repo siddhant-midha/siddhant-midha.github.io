@@ -22,4 +22,5 @@ A journal club on **recent developments and research in quantum error correction
 | Oct 6, 2026 | 3:00 – 4:30 pm | The polynomial formalism | Nick O'Dea | — |
 | Oct 13, 2026 | 3:00 – 4:30 pm | Haah's code | Nick O'Dea | — |
 | Oct 20, 2026 | — | *No session* | — | — |
+| Oct 27, 2026 | 3:00 – 4:30 pm | Magic | Katie Chang | — |
 {: .table}
