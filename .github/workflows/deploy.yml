@@ -24,7 +24,10 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.2.2'
+        # Pin the series, not the patch. ubuntu-latest moved to Ubuntu 26.04,
+        # which has no prebuilt CRuby 3.2.2, so an exact patch pin fails at
+        # Setup Ruby before the build even starts.
+        ruby-version: '3.2'
         bundler-cache: true
     - name: Update _config.yml ⚙️
       uses: fjogeleit/yaml-update-action@v0.13.1
