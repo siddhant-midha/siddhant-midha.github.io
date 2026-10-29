@@ -24,7 +24,9 @@ This group is centered around the theme "beyond-1D and high temperature," explor
 | Oct 8, 2026 | Replica Theory | Siddhant Midha | [ref](https://people.stat.ucla.edu/ywu/research/documents/BOOKS/SpinGlassInformation.pdf "Nishimori, Statistical Physics of Spin Glasses and Information Processing") |
 | Oct 16, 2026\* | Glassiness and algorithmic consequences | Siddhant Midha | [ref](https://arxiv.org/abs/2510.08497 "Average-case quantum complexity from glassiness") |
 | Oct 22, 2026 | *No session* | — | — |
-| Oct 29, 2026 | Quantum Gibbs States | Ewin Tang | — |
+| Oct 29, 2026 | Preparing quantum Gibbs states | Ewin Tang | — |
+| Nov 5, 2026 | Spectral gap of the Heisenberg model | Yarden Sheffer | — |
+| Nov 12, 2026 | TBD | Yifan F. Zhang | — |
 {: .table}
 
 \* Friday that week, not the usual Thursday.
