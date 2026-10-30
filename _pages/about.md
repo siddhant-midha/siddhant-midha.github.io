@@ -34,6 +34,3 @@ My research spans a network of ideas at the intersection of quantum information 
 If you would like to chat about any of the topics above (or more!) feel free to reach out. If you are an IITB student, the material on the [teaching](https://siddhantmidha.com/teaching/) page might be useful. If you are a person interested in learning more about quantum information, [this](https://github.com/VedangAsgaonkar/Quantum-Machine-Learning-SoC2022?tab=readme-ov-file) may be useful.
 
 I am organizing a [QEC journal club](/qec-journal-club/) and a [many-body reading group](/many-body-reading-group/) at Princeton this semester.
-
-
-<a href="https://info.flagcounter.com/UvsF"><img src="https://s11.flagcounter.com/count2/UvsF/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
