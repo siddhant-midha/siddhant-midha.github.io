@@ -60,10 +60,12 @@ usually the whole change.
   within a group. Note `_pages/teaching.md` currently hand-writes its course list
   with absolute links rather than using the collection's card rendering.
 - `_pages/*.md` — top-level pages. `nav: true` plus `nav_order` controls the
-  navbar; `_pages/dropdown.md` defines a submenu via its `children` list. The
-  navbar is deliberately just **about / publications / teaching / notes**; `cv`,
-  the submenu, and the two group pages carry `nav: false` but remain reachable at
-  their permalinks. The blog link was removed from `_includes/header.html` rather
+  navbar. The navbar is deliberately just **about / publications / teaching /
+  notes / cv**; the two reading-group pages carry `nav: false` but remain
+  reachable at their permalinks. `_includes/header.html` still has the generic
+  `p.dropdown` branch, but no page sets it — the stock `dropdown.md` submenu and
+  the `/repositories/` page it pointed at were deleted (see **Third-party
+  calls**). The blog link was removed from `_includes/header.html` rather
   than by blanking `blog_nav_title`, because that variable also feeds the blog
   index's `<title>` in `_includes/metadata.html` and blanking it leaves a stray
   leading `" | "`. `/blog/` still works.
@@ -73,8 +75,8 @@ usually the whole change.
   from displayed BibTeX by `_plugins/hideCustomBibtex.rb`. `selected={true}`
   promotes a paper to the about page (currently disabled there). **Do not
   regenerate this file** — see below.
-- `_data/` — `cv.yml` is the **single** source for `/cv/`; plus `repositories.yml`,
-  `coauthors.yml`, `venues.yml`. Upstream al-folio can also render the CV from a
+- `_data/` — `cv.yml` is the **single** source for `/cv/`; plus `coauthors.yml`,
+  `venues.yml`. Upstream al-folio can also render the CV from a
   JSON Resume file via `site.data.resume`, and that source *took priority* over
   `cv.yml` whenever it loaded — so a stray `_data/resume.*` would silently swap the
   page's contents. That whole path is gone: the broken `assets/json/resume.json`,
@@ -142,6 +144,48 @@ Images in `assets/img/` are processed by jekyll-imagemagick into 480/800/1400px
 WebP variants at build time (ImageMagick must be installed for a native build).
 Use `{% include figure.html %}` rather than raw `<img>` so responsive sources and
 medium-zoom work.
+
+## Third-party calls
+
+In October 2026 `siddhantmidha.com` was blocked on Princeton's network as
+category **malware**. The cause was `_includes/scripts/mathjax.html`, which
+loaded `https://polyfill.io/v3/polyfill.min.js` on every page with math on it.
+polyfill.io was sold in June 2024 and began serving malicious redirects;
+reputation feeds flag anything referencing it. The tag came from stock al-folio
+and MathJax 3's `es5` bundle never needed it. Removed, along with two other
+avoidable third-party calls: the Flag Counter widget on the about page
+(`s11.flagcounter.com`, a visitor tracker) and the whole `/repositories/` page,
+whose only content was GitHub-stats images from `*.vercel.app` — shared hosting
+that draws blanket flags. That page was already `nav: false`, had an empty
+`github_repos` list and still carried the theme's placeholder description, so
+the page, `_includes/repository/`, `_data/repositories.yml`, the stock
+`dropdown.md` submenu that linked to it, and the `repo_theme_*`/`repo_trophies`
+config keys all went.
+
+So: **every external host the site loads is a reputation liability.** Before
+adding one, check it is a CDN with a reputation to protect. The current set is
+`cdn.jsdelivr.net`, `unpkg.com`, `cdnjs.cloudflare.com`, `fonts.googleapis.com`,
+and the two publication badges (`d1bxh8uas1mnw7.cloudfront.net` for Altmetric,
+`badge.dimensions.ai` for Dimensions). Audit with:
+
+```bash
+git grep -hoE '<(script|iframe|link|img)[^>]*(src|href)="https?://[^"]+"' \
+  origin/gh-pages -- '*.html' | grep -oE 'https?://[a-zA-Z0-9._-]+' | sort | uniq -c | sort -rn
+```
+
+Clearing a bad categorisation is not a code change — the verdict is cached
+against the hostname and is not recomputed from current content. Cleaning the
+site only makes a *rescan* come back clean; something still has to trigger one.
+Google Safe Browsing was never the source here (its transparency endpoint
+reports the domain clean). The open, no-account recategorisation portals are
+`sitereview.bluecoat.com`, `urlfiltering.paloaltonetworks.com`,
+`fortiguard.com/webfilter`, `sitereview.zscaler.com` and `report.netcraft.com`;
+Princeton's own block page offers only `infosec@princeton.edu` and names no
+vendor.
+
+Unrelated aside, useful when debugging this class of thing: the `.cn` Mapbox
+endpoints and odd-looking domains in `assets/plotly/demo.html` are inert strings
+inside vendored library bundles, not live calls.
 
 ## Custom Liquid extensions (`_plugins/`)
 
