@@ -23,4 +23,5 @@ A journal club on **recent developments and research in quantum error correction
 | Oct 13, 2026 | 3:00 – 4:30 pm | Haah's code | Nick O'Dea | — |
 | Oct 20, 2026 | — | *No session* | — | — |
 | Oct 27, 2026 | 3:00 – 4:30 pm | Magic | Katie Chang | — |
+| Nov 3, 2026 | 2:00 – 3:00 pm | Estimating logical sensitivities by fault-counting | Winston Fu | [ref](https://arxiv.org/abs/2610.10531 "Fu, Staples & Thompson, Efficient Estimation of Logical Sensitivities Through Fault-Counting") |
 {: .table}
