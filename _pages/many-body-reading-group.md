@@ -26,7 +26,7 @@ This group is centered around the theme "beyond-1D and high temperature," explor
 | Oct 22, 2026 | *No session* | — | — |
 | Oct 29, 2026 | Preparing quantum Gibbs states | Ewin Tang | — |
 | Nov 5, 2026 | Spectral gap of the Heisenberg model | Yarden Sheffer | — |
-| Nov 12, 2026 | TBD | Yifan F. Zhang | — |
+| Nov 12, 2026 | Noisy Quantum Circuits | Yifan F. Zhang | — |
 {: .table}
 
 \* Friday that week, not the usual Thursday.
